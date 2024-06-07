@@ -26,7 +26,7 @@ namespace Core
 
         public Queue<HandleBase> DoneHandleQueue = new Queue<HandleBase>();
 
-        public async UniTask Initialize()
+        new public async UniTask Initialize()
         {
             //1.读取全局配置
             AssetSetting assetSetting = Resources.Load<AssetSetting>("Settings/AssetSetting");

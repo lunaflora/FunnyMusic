@@ -43,7 +43,7 @@ To get started, perform the following:
 
 For new Unity Input System package:
 - Define UNITY_INPUT_SYSTEM_V2 in scripting defines in player settings.
-- If you are supporting multiple touch screens/devices, you can set the DeviceId property on your gesture recognizer to limit the gesture to a specific device, or set to 0 for all devices.
+t the gesture- If you are supporting multiple touch screens/devices, you can set the DeviceId property on your gesture recognizer to limi to a specific device, or set to 0 for all devices.
 - Make sure you have imported the new input system package and enabled the new input backends (requires Unity restart).
 - You need to add an EventSystem object to every scene. This object should have an option in the inspector to enable new input system functionality, click that to turn it on.
 - You can enable mouse and stylus touch events via TouchSimulation.Enable(), more info: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Touch.html

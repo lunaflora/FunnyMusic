@@ -14,11 +14,8 @@ namespace Game
         private void Awake()
         {
             Application.targetFrameRate = forcedFrameRate;
-       
-        }
-
-        void Start()
-        {
+            
+            InitGameSingleton();
        
         }
 
@@ -26,6 +23,11 @@ namespace Game
         void Update()
         {
         
+        }
+
+        private void InitGameSingleton()
+        {
+            InputSystemHandler.Instance.Initialize();
         }
     }
 

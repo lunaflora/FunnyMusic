@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
 using Random = UnityEngine.Random;
@@ -12,6 +13,7 @@ namespace Codes
     {
         public Transform BaseNote;
         public Transform[] NoteLine;
+        public List<Color> RandomColors;
         public int SongBmp = 120;
 
         public float FallSpeed = 1;
@@ -41,6 +43,8 @@ namespace Codes
                 int index = Random.Range(0, NoteLine.Length);
                 Transform spawnNote = Instantiate(BaseNote);
                 spawnNote.position = NoteLine[index].position;
+                //Set Color
+                spawnNote.GetComponent<SpriteRenderer>().color = RandomColors[Random.Range(0, RandomColors.Count)];
                 notesList.Add(spawnNote);
             }
         }
@@ -49,6 +53,10 @@ namespace Codes
         {
             foreach (var note in notesList)
             {
+                if (note == null)
+                {
+                    continue;
+                }
                 Vector3 originPos = note.position;
                 Vector3 purposePos = new Vector3(originPos.x, originPos.y - FallSpeed * Time.smoothDeltaTime);
                 note.position = purposePos;
@@ -56,6 +64,12 @@ namespace Codes
 
             for (int i = notesList.Count - 1; i >= 0; i--)
             {
+                if (notesList[i] == null)
+                {
+                    notesList.RemoveAt(i);
+                    continue;
+                }
+                
                 if (notesList[i].position.y < GroundedLine)
                 {
                     Destroy(notesList[i].gameObject);

@@ -5,6 +5,7 @@ namespace Core
     public interface ISingleton
     {
         void Register();
+        void Initialize();
     }
 
     public abstract class Singleton<T> : ISingleton where T : Singleton<T>, new()
@@ -33,6 +34,10 @@ namespace Core
             }
 
             instance = (T)this;
+        }
+
+        public virtual void Initialize()
+        {
         }
 
         public virtual void Destroy()

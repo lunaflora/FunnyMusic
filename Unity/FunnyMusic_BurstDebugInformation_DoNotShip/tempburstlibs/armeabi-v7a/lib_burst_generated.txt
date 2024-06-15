@@ -36,6 +36,8 @@ Library: E:\git\FunnyMusic\Unity\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_
 --assembly-defines=UniTask.YooAsset;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
@@ -88,6 +90,8 @@ Library: E:\git\FunnyMusic\Unity\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_
 --assembly-defines=UniTask.YooAsset;
 --assembly-defines=Unity.Burst;
 --assembly-defines=Unity.Burst.Unsafe;
+--assembly-defines=Unity.InputSystem;
+--assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;

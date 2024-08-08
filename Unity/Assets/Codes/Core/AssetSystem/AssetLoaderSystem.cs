@@ -210,7 +210,7 @@ namespace Core
             return await tsc.Task;
         }
 
-        public async UniTask<Scene> LoadAssetAsync(string location, uint priority = 0,
+        public async UniTask<Scene> LoadScenesAsync(string location, uint priority = 0,
             Action<float> progressCallback = null, LoadSceneMode loadSceneMode = LoadSceneMode.Single, bool activateOnLoad = true,
             PlayerLoopTiming timing = PlayerLoopTiming.Update)
         {

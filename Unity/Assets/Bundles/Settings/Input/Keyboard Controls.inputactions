@@ -246,7 +246,7 @@
             ]
         },
         {
-            "name": "ReplayMode",
+            "name": "RecordMode",
             "id": "919e14e0-a15a-45db-bdb9-2d8c81207449",
             "actions": [
                 {

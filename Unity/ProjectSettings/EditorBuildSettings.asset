@@ -20,4 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RhythmEditor/PlayGame.unity
     guid: 4dd1915dea487d44d98bd68b016569d6
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 24c47d9a8f2602e4ab744bcbe000bcb8,
+      type: 2}

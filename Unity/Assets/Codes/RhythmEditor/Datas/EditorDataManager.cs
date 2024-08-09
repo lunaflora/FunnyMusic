@@ -10,6 +10,11 @@ namespace RhythmEditor
         [SerializeField]
         public SystemMode SystemMode = SystemMode.EditorMode;
 
+        [SerializeField]
+        public AudioClip LoadingAudio;
+
+        public float CurrentTime = 0;
+
     }
     
 }

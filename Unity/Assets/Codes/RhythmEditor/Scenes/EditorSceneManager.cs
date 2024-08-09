@@ -20,9 +20,21 @@ namespace RhythmEditor
         /// </summary>
         public CanvasGroup LoadingUI;
 
-        private void Start()
+       
+        private void Awake()
         {
+            Entry();
             StartLoadSceneGroup(DefaultGroupID);
+        }
+        
+
+        /// <summary>
+        /// 制谱器入口
+        /// 初始化各种数据
+        /// </summary>
+        private void Entry()
+        {
+            
         }
 
         private void StartLoadSceneGroup(int groupID)

@@ -4,6 +4,6 @@
     {
         EditorMode,
         DemoMode,
-        ReplayMode
+        RecordMode
     }
 }

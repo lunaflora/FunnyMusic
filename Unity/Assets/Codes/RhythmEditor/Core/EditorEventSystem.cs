@@ -1,11 +1,49 @@
-﻿using Core;
+﻿using System;
+using Core;
+using FLib;
 using UniFramework.Event;
 
 namespace RhythmEditor
 {
-    public class EditorEventSystem
+    public class EditorEventSystem: Singleton<EditorEventSystem>
     {
+        private readonly EventGroup eventGroup = new EventGroup();
+
+        #region Callback
+
+        public Action OnEnterDemoMode;
+        public Action OnExitDemoMode;
+        public Action OnEnterRecordMode;
+        public Action OnExitRecordMode;
+
+        #endregion
+
+        public void RegisterEvents()
+        {
+            eventGroup.AddListener<EditorEventDefine.EventEnterDemoMode>(OnHandleEnterDemoMode);
+            eventGroup.AddListener<EditorEventDefine.EventExitDemoMode>(OnHandleExitDemoMode);
+            eventGroup.AddListener<EditorEventDefine.EventEnterRecordMode>(OnHandleEnterRecordMode);
+            eventGroup.AddListener<EditorEventDefine.EventExitRecordMode>(OnHandleEventExitRecordMode);
+       
+        }
+
+        private void OnHandleEnterDemoMode(IEventMessage message)
+        {
+            FDebug.Print("OnHandleEnterDemoMode");
+        }
         
+        private void OnHandleExitDemoMode(IEventMessage message)
+        {
+            FDebug.Print("OnHandleExitDemoMode");
+        }
+        private void OnHandleEnterRecordMode(IEventMessage message)
+        {
+            FDebug.Print("OnHandleEnterRecordMode");
+        }
+        private void OnHandleEventExitRecordMode(IEventMessage message)
+        {
+            FDebug.Print("OnHandleEventExitRecordMode");
+        }
     }
 
     public class EditorEventDefine

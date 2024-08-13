@@ -24,9 +24,14 @@ namespace RhythmEditor
         private void Awake()
         {
             Entry();
+           
+        }
+
+        private void Start()
+        {
             StartLoadSceneGroup(DefaultGroupID);
         }
-        
+
 
         /// <summary>
         /// 制谱器入口
@@ -34,6 +39,8 @@ namespace RhythmEditor
         /// </summary>
         private void Entry()
         {
+            //初始化事件列表
+            EditorEventSystem.Instance.RegisterEvents();
             
         }
 
@@ -52,13 +59,14 @@ namespace RhythmEditor
             ScenesSO sceneSo = ScenesSoList.Find((sceneSo) => sceneSo.SceneGroupID == groupID);
             if (sceneSo != null)
             {
-                for (int i = 0; i < sceneSo.SceneNameList.Count; i++)
+                List<AsyncOperation> loadOperation = new List<AsyncOperation>();
+                for (int i = SceneManager.sceneCount - 1; i > 0; i--)
                 {
-                    await SceneManager.UnloadSceneAsync(sceneSo.SceneNameList[i]);
+                    await SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i));
                 }
                 
+
                 string loadSceneName = string.Empty;
-                List<AsyncOperation> loadOperation = new List<AsyncOperation>();
                 for (int i = 0; i < sceneSo.SceneNameList.Count; i++)
                 {
                     loadSceneName = sceneSo.SceneNameList[i];
@@ -66,7 +74,7 @@ namespace RhythmEditor
                     
                 }
 
-                bool allComplete = loadOperation.FindAll((op) => op.isDone == true).Count ==
+               bool allComplete = loadOperation.FindAll((op) => op.isDone == true).Count ==
                                    sceneSo.SceneNameList.Count;
 
                 while (!allComplete)
@@ -77,7 +85,7 @@ namespace RhythmEditor
                     LoadingUI.alpha = Mathf.MoveTowards(LoadingUI.alpha, 0, Time.deltaTime * 1f);
                 }
 
-                LoadingUI.alpha = 0;
+                LoadingUI.alpha = 0; 
             }
         }
         

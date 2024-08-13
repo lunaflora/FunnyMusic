@@ -671,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &588189143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrintTrace: 0
   SystemMode: 0
+  LoadingAudio: {fileID: 8300000, guid: 11f4b59207b89d64ba2f6219748da72c, type: 3}
+  CurrentTime: 0
 --- !u!4 &1667047466
 Transform:
   m_ObjectHideFlags: 0

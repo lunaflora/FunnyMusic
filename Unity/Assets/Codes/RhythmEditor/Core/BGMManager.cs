@@ -20,6 +20,26 @@ namespace RhythmEditor
             
         }
 
+
+        private void OnExitDemo()
+        {
+            BGMSource.Pause();
+        }
+        private void OnEnterDemo()
+        {
+            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            BGMSource.Play();
+        }
+
+        private void DoRecord()
+        {
+            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+        }
+
+
+
+        #region LifeCircle
+
         private void Start()
         {
             Initialize();
@@ -30,7 +50,7 @@ namespace RhythmEditor
             switch (EditorDataManager.Instance.SystemMode)
             {
                 case SystemMode.DemoMode:
-                    DoDemo();
+                    OnEnterDemo();
                     break;
                 case SystemMode.RecordMode:
                     DoRecord();
@@ -39,14 +59,22 @@ namespace RhythmEditor
             }
         }
 
-        private void DoDemo()
+        private void OnEnable()
         {
-            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            EditorEventSystem.Instance.OnEnterDemoMode += OnEnterDemo;
+            EditorEventSystem.Instance.OnExitDemoMode += OnExitDemo;
+            EditorEventSystem.Instance.OnEnterRecordMode += OnEnterDemo;
+            EditorEventSystem.Instance.OnExitRecordMode += OnExitDemo;
         }
 
-        private void DoRecord()
+        private void OnDisable()
         {
-            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            EditorEventSystem.Instance.OnEnterDemoMode -= OnEnterDemo;
+            EditorEventSystem.Instance.OnExitDemoMode -= OnExitDemo;
+            EditorEventSystem.Instance.OnEnterRecordMode -= OnEnterDemo;
+            EditorEventSystem.Instance.OnExitRecordMode -= OnExitDemo;
         }
+
+        #endregion
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 464384027}
   - component: {fileID: 464384029}
   - component: {fileID: 464384028}
+  - component: {fileID: 464384030}
   m_Layer: 5
   m_Name: Waveform
   m_TagString: Untagged
@@ -637,6 +638,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464384026}
   m_CullTransparentMesh: 1
+--- !u!114 &464384030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464384026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a1516fab314a48b53f473d96042de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveformView: {fileID: 464384028}
+  WaveformColor: {r: 0.3876534, g: 0.9528302, b: 0.373042, a: 1}
+  WaveformClearColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &485867075
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +852,7 @@ MonoBehaviour:
   SwitchSprites:
   - {fileID: -1759815482, guid: 5c3d61990f8cfd746aca839d1acf7469, type: 3}
   - {fileID: 1538108997, guid: d45c54ccfbf01804db8a90dc9d23d368, type: 3}
+  ScrollAreaContent: {fileID: 1794325365}
 --- !u!1 &537327963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2155,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 832322780}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999464
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2438,6 +2455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bee84abbfa4353b17e6cd175d3cf7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaveformUITracks:
+  - {fileID: 1362862040}
+  - {fileID: 1392675340}
+  - {fileID: 1739943994}
+  - {fileID: 1681095373}
+  - {fileID: 2099242137}
 --- !u!1 &2099242136
 GameObject:
   m_ObjectHideFlags: 0

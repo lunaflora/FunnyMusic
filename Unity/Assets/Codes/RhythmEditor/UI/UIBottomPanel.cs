@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace RhythmEditor
@@ -11,7 +13,15 @@ namespace RhythmEditor
         public RectTransform BottomPanel;
         public Image ButtonImage;
         public Sprite[] SwitchSprites;
+        public RectTransform ScrollAreaContent;
 
+
+        private void Initialize()
+        {
+            float audioLength = EditorDataManager.Instance.LoadingAudio.length;
+            ScrollAreaContent.sizeDelta = new Vector2(audioLength * UIConstValue.UIWidthScale, 300);
+        }
+        
         /// <summary>
         /// 开关底部面板
         /// </summary>
@@ -28,6 +38,16 @@ namespace RhythmEditor
                 ButtonImage.sprite = SwitchSprites[1];
             }
         }
+
+        #region Life
+
+        private void Start()
+        {
+            Initialize();
+          
+        }
+
+        #endregion
         
 
     }

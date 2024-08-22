@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 430881489}
   - component: {fileID: 430881488}
   - component: {fileID: 430881490}
+  - component: {fileID: 430881491}
   m_Layer: 0
   m_Name: InputSystem
   m_TagString: Untagged
@@ -393,6 +394,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a625f26b-04bd-47df-ac48-8f6dfad871f7
     m_ActionName: ReplayMode/Exit[/Keyboard/space,/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881491}
+        m_TargetAssemblyTypeName: RhythmEditor.EditorModeInput, Assembly-CSharp
+        m_MethodName: CrateDrumBeat1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be2b3b2d-04aa-4d6e-bfd5-a8e4ea5be4c1
+    m_ActionName: EditorMode/Point1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881491}
+        m_TargetAssemblyTypeName: RhythmEditor.EditorModeInput, Assembly-CSharp
+        m_MethodName: CrateDrumBeat2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5452195-d51b-41e7-99b5-651fd78c8ddc
+    m_ActionName: EditorMode/Point2[/Keyboard/1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: EditorMode
@@ -426,6 +459,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EditorInput: {fileID: 430881488}
+--- !u!114 &430881491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430881487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006159d80ea74a20814348c117e50181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &520171826
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +694,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577039301}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1086,6 +1131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1667047466}
   - component: {fileID: 1667047465}
+  - component: {fileID: 1667047467}
   m_Layer: 0
   m_Name: EditorData
   m_TagString: Untagged
@@ -1109,6 +1155,9 @@ MonoBehaviour:
   SystemMode: 0
   LoadingAudio: {fileID: 8300000, guid: 11f4b59207b89d64ba2f6219748da72c, type: 3}
   CurrentTime: 0
+  DrumBeatDatas: []
+  DrumBeatSceneDatas: []
+  DrumBeatUIDatas: []
 --- !u!4 &1667047466
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,6 +1173,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667047467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667047464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a08682f32c6a4cf9950ba7f77cba44ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

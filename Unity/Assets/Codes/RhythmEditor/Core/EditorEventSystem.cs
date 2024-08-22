@@ -16,6 +16,8 @@ namespace RhythmEditor
         public Action OnEnterRecordMode;
         public Action OnExitRecordMode;
 
+        public Action<int> OnCreateDrumBeat;
+
         #endregion
 
         public void RegisterEvents()
@@ -24,26 +26,44 @@ namespace RhythmEditor
             eventGroup.AddListener<EditorEventDefine.EventExitDemoMode>(OnHandleExitDemoMode);
             eventGroup.AddListener<EditorEventDefine.EventEnterRecordMode>(OnHandleEnterRecordMode);
             eventGroup.AddListener<EditorEventDefine.EventExitRecordMode>(OnHandleEventExitRecordMode);
+            eventGroup.AddListener<EditorEventDefine.EventCrateDrumBeat>(OnHandleEventCreateDrumBeat);
        
         }
 
+        
         private void OnHandleEnterDemoMode(IEventMessage message)
         {
             FDebug.Print("OnHandleEnterDemoMode");
+            OnEnterDemoMode?.Invoke();
         }
         
         private void OnHandleExitDemoMode(IEventMessage message)
         {
+            
             FDebug.Print("OnHandleExitDemoMode");
+            OnExitDemoMode?.Invoke();
         }
         private void OnHandleEnterRecordMode(IEventMessage message)
         {
             FDebug.Print("OnHandleEnterRecordMode");
+            OnEnterRecordMode?.Invoke();
         }
         private void OnHandleEventExitRecordMode(IEventMessage message)
         {
             FDebug.Print("OnHandleEventExitRecordMode");
+            OnExitRecordMode.Invoke();
         }
+        
+        #region DrumBeats
+
+        private void OnHandleEventCreateDrumBeat(IEventMessage message)
+        {
+            EditorEventDefine.EventCrateDrumBeat eventCrateDrumBeat = message as EditorEventDefine.EventCrateDrumBeat;
+            FDebug.Print($"CreateDrumBeat {eventCrateDrumBeat.Index}");
+            OnCreateDrumBeat?.Invoke(eventCrateDrumBeat.Index);
+        }
+
+        #endregion
     }
 
     public class EditorEventDefine
@@ -93,5 +113,24 @@ namespace RhythmEditor
                 UniEvent.SendMessage(msg);
             }
         }
+
+        #region DrumBeats
+
+        /// <summary>
+        /// 新建鼓点
+        /// </summary>
+        public class EventCrateDrumBeat : IEventMessage
+        {
+            public int Index;
+            public static void SendEventMessage(int index)
+            {
+                var msg = new EventCrateDrumBeat();
+                msg.Index = index;
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+
+        #endregion
     }
 }

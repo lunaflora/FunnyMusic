@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace RhythmEditor
 {
-    public class EditorInputSystem : MonoBehaviour
+    public class InputSystem : MonoBehaviour
     {
         public PlayerInput EditorInput;
 

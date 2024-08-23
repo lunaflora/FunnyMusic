@@ -65,7 +65,7 @@ namespace RhythmEditor
 
         #endregion
     }
-
+    
     public class EditorEventDefine
     {
         /// <summary>
@@ -132,5 +132,33 @@ namespace RhythmEditor
         
 
         #endregion
+
+
+        #region UI
+        
+        public class EventUpdateCurrentTime : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventUpdateCurrentTime();
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        public class EventSetCurrentTime : IEventMessage
+        {
+            public float CurrentTime = 0;
+            public static void SendEventMessage(float currentTime)
+            {
+                var msg = new EventSetCurrentTime();
+                msg.CurrentTime = currentTime;
+                UniEvent.SendMessage(msg);
+            }
+        }
+
+        #endregion
     }
+
+  
 }
+

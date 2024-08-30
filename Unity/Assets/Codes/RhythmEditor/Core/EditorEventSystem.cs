@@ -155,6 +155,26 @@ namespace RhythmEditor
                 UniEvent.SendMessage(msg);
             }
         }
+        
+        /// <summary>
+        /// 新建鼓点数据处理
+        /// </summary>
+        public class EventCreateCrateDrumBeatData : IEventMessage
+        {
+            public DrumBeatData DrumBeatData;
+            public DrumBeatSceneData DrumBeatSceneData;
+            public DrumBeatUIData DrumBeatUIData;
+            
+            public static void SendEventMessage(DrumBeatData drumBeatData, DrumBeatSceneData drumBeatSceneData,DrumBeatUIData drumBeatUIData)
+            {
+                var msg = new EventCreateCrateDrumBeatData();
+                msg.DrumBeatData = drumBeatData;
+                msg.DrumBeatSceneData = drumBeatSceneData;
+                msg.DrumBeatUIData = drumBeatUIData;
+                UniEvent.SendMessage(msg);
+            }
+
+        }
 
         #endregion
     }

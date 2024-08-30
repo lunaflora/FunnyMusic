@@ -23,32 +23,56 @@ namespace RhythmEditor
         }
 
 
+        /// <summary>
+        /// 离开试玩模式
+        /// </summary>
         private void OnExitDemo()
         {
             BGMSource.Pause();
         }
+        
+        /// <summary>
+        /// 进入试玩模式
+        /// </summary>
         private void OnEnterDemo()
         {
             EditorDataManager.Instance.CurrentTime = BGMSource.time;
             BGMSource.Play();
         }
 
+        /// <summary>
+        /// 录制模式Loop
+        /// </summary>
         private void DoRecord()
         {
             EditorDataManager.Instance.CurrentTime = BGMSource.time;
             EditorEventDefine.EventUpdateCurrentTime.SendEventMessage();
+            
+            if (BGMSource.clip.length - BGMSource.time < 0.02f)
+            {
+                EditorEventDefine.EventSetCurrentTime.SendEventMessage(0);
+            }
         }
 
+        /// <summary>
+        /// 试玩模式Loop
+        /// </summary>
         private void DoDemo()
         {
             EditorDataManager.Instance.CurrentTime = BGMSource.time;
             EditorEventDefine.EventUpdateCurrentTime.SendEventMessage();
+
+            if (BGMSource.clip.length - BGMSource.time < 0.02f)
+            {
+                EditorEventDefine.EventSetCurrentTime.SendEventMessage(0);
+            }
         }
 
         private void EventSetCurrentTime(IEventMessage message)
         {
             EditorEventDefine.EventSetCurrentTime setCurrentTime = message as EditorEventDefine.EventSetCurrentTime;
             BGMSource.time = setCurrentTime.CurrentTime;
+          
         }
 
         #region LifeCircle

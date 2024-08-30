@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UniFramework.Event;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace RhythmEditor
@@ -6,6 +8,40 @@ namespace RhythmEditor
     public class InputSystem : MonoBehaviour
     {
         public PlayerInput EditorInput;
+        private readonly EventGroup eventGroup = new EventGroup();
+
+        private void OnEnable()
+        {
+           
+            eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
+        }
+
+        private void OnDisable()
+        {
+            eventGroup.RemoveAllListener();
+        }
+
+        /// <summary>
+        /// 手动设置音轨时间，自动退出试玩和录制模式进入编辑模式
+        /// </summary>
+        /// <param name="message"></param>
+        private void EventSetCurrentTime(IEventMessage message)
+        {
+            switch (EditorDataManager.Instance.SystemMode)
+            {
+                case SystemMode.DemoMode:
+                    EditorInput.SwitchCurrentActionMap("EditorMode");
+                    EditorEventSystem.Instance.OnExitDemoMode();
+                    break;
+                case SystemMode.RecordMode:
+                    EditorInput.SwitchCurrentActionMap("EditorMode");
+                    EditorEventSystem.Instance.OnExitRecordMode();
+                    break;
+                
+            }
+
+            EditorDataManager.Instance.SystemMode = SystemMode.EditorMode;
+        }
 
         public void SwitchRecordMode(InputAction.CallbackContext context)
         {

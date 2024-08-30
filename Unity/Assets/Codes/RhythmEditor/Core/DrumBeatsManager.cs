@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace RhythmEditor
 {
+    /// <summary>
+    /// 鼓点处理中心
+    /// </summary>
     public class DrumBeatsManager : MonoBehaviour
     {
         private List<DrumBeatData> DrumBeatDatas = new List<DrumBeatData>();
@@ -50,6 +53,8 @@ namespace RhythmEditor
             DrumBeatDatas.Sort(DrumBeatData.SortTime);
             DrumBeatSceneDatas.Add(drumBeatSceneData);
             DrumBeatUIDatas.Add(drumBeatUIData);
+            
+            EditorEventDefine.EventCreateCrateDrumBeatData.SendEventMessage(drumBeatData,drumBeatSceneData,drumBeatUIData);
 
         }
 

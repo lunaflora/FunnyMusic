@@ -418,6 +418,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1590756567}
   - {fileID: 490715847}
   - {fileID: 1093851834}
   - {fileID: 771869634}
@@ -559,6 +560,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1590756566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590756567}
+  m_Layer: 0
+  m_Name: DrumBeatsRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590756567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590756566}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1200446267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712986408
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1712986409}
+  - component: {fileID: 1712986410}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -591,6 +624,26 @@ Transform:
   - {fileID: 2124367685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1712986410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712986408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b2b968f85d46b392a690947f8190d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeatMoveTime: 1.5
+  BeatStart: {fileID: 490715847}
+  BeatEnd: {fileID: 1093851834}
+  BeatParent: {fileID: 1590756567}
+  BeatPrefabList:
+  - {fileID: 5351896216042170823, guid: ac59127715e916743bcc5060cda275f7, type: 3}
+  - {fileID: 8724870359983946790, guid: 78136006a7e17a94a95b6b1b166a1c63, type: 3}
+  PlayDrumBeats: []
 --- !u!1 &2026649844
 GameObject:
   m_ObjectHideFlags: 0

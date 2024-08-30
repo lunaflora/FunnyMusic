@@ -1883,7 +1883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -926.4996, y: 0}
+  m_AnchoredPosition: {x: -926.5, y: 0}
   m_SizeDelta: {x: 1852, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1802990670
@@ -2476,6 +2476,10 @@ MonoBehaviour:
   - {fileID: 1739943994}
   - {fileID: 1681095373}
   - {fileID: 2099242137}
+  UIDrumBeatItem:
+  - {fileID: 1851880872947300355, guid: e2278ecc168252b449042588481f2b5a, type: 3}
+  - {fileID: 6193732787206835661, guid: 23fdfe89cea1e574f81cd307db77bd89, type: 3}
+  UIDrumBeatItems: []
 --- !u!1 &2099242136
 GameObject:
   m_ObjectHideFlags: 0

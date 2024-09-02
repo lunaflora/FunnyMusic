@@ -54,7 +54,7 @@ namespace RhythmEditor
             playDrumBeat.DrumBeatSceneData = eventCreateCrateDrumBeatData.DrumBeatSceneData;
             playDrumBeat.BeatStart = BeatStart;
             playDrumBeat.BeatEnd = BeatEnd;
-            playDrumBeat.UpdateDrumBeat();
+            playDrumBeat.UpdateDrumBeat(0);
 
         }
 

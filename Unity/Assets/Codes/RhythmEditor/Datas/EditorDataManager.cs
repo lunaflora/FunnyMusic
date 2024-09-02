@@ -13,6 +13,8 @@ namespace RhythmEditor
         [SerializeField]
         public AudioClip LoadingAudio;
 
+        public string LoadingAudioPath;
+
         public float CurrentTime = 0;
 
         public List<DrumBeatData> DrumBeatDatas = new List<DrumBeatData>();

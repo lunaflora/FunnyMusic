@@ -1,4 +1,5 @@
 ﻿using System;
+using UniFramework.Event;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,11 +8,12 @@ namespace RhythmEditor
     /// <summary>
     /// 波形图的绘制
     /// </summary>
-    public class Waveform : MonoBehaviour
+    public class UIWaveform : MonoBehaviour
     {
         public Image WaveformView;
         public Color WaveformColor;
         public Color WaveformClearColor;
+        private readonly EventGroup eventGroup = new EventGroup();
 
         private void Initialize()
         {
@@ -85,9 +87,25 @@ namespace RhythmEditor
                 new Vector2(0.5f, 0.5f));
         }
 
+
+        private void UploadMusicComplete(IEventMessage eventMessage)
+        {
+            Initialize();
+        }
+
         private void Start()
         {
             Initialize();
+        }
+
+        private void OnEnable()
+        {
+            eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
+        }
+
+        private void OnDisable()
+        {
+            eventGroup.RemoveAllListener();
         }
     }
 }

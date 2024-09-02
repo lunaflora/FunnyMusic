@@ -175,6 +175,32 @@ namespace RhythmEditor
             }
 
         }
+        
+        /// <summary>
+        /// 上传歌曲
+        /// </summary>
+        public class EventUploadMusic : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventUploadMusic();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        /// <summary>
+        /// 上传歌曲完成，处理数据
+        /// </summary>
+        public class EventUploadMusicComplete : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventUploadMusicComplete();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
 
         #endregion
     }

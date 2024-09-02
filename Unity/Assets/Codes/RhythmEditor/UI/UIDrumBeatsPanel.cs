@@ -35,6 +35,12 @@ namespace RhythmEditor
         private void OnEnable()
         {
             eventGroup.AddListener<EditorEventDefine.EventCreateCrateDrumBeatData>(EventCreateCrateDrumBeatData);
+            eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
+        }
+        
+        private void UploadMusicComplete(IEventMessage eventMessage)
+        {
+            Initialize();
         }
 
         private void OnDisable()

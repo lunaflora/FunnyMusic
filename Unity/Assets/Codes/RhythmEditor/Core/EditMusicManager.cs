@@ -75,6 +75,11 @@ namespace RhythmEditor
           
         }
 
+        private void UploadMusicComplete(IEventMessage message)
+        {
+            Initialize();
+        }
+
         #region LifeCircle
 
         private void Start()
@@ -102,7 +107,7 @@ namespace RhythmEditor
             EditorEventSystem.Instance.OnExitDemoMode += OnExitDemo;
             EditorEventSystem.Instance.OnEnterRecordMode += OnEnterDemo;
             EditorEventSystem.Instance.OnExitRecordMode += OnExitDemo;
-            
+            eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
             eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
         }
 

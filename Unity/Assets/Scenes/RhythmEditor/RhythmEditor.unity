@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 430881488}
   - component: {fileID: 430881490}
   - component: {fileID: 430881491}
+  - component: {fileID: 430881492}
   m_Layer: 0
   m_Name: InputSystem
   m_TagString: Untagged
@@ -426,6 +427,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a5452195-d51b-41e7-99b5-651fd78c8ddc
     m_ActionName: EditorMode/Point2[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881492}
+        m_TargetAssemblyTypeName: RhythmEditor.RecordModeInput, Assembly-CSharp
+        m_MethodName: CrateDrumBeat1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c7e58265-07e7-4e3c-ad90-be5529603087
+    m_ActionName: RecordMode/Point1[/Keyboard/s,/Keyboard/d,/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881492}
+        m_TargetAssemblyTypeName: RhythmEditor.RecordModeInput, Assembly-CSharp
+        m_MethodName: CrateDrumBeat2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 424ae4b9-aeee-4209-9310-0537fb95c6d4
+    m_ActionName: RecordMode/Pont2[/Keyboard/j,/Keyboard/k,/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: EditorMode
@@ -469,6 +502,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 006159d80ea74a20814348c117e50181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &430881492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430881487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25f45d04fa24d438a2d4f4c64894b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &520171826
@@ -1132,6 +1177,7 @@ GameObject:
   - component: {fileID: 1667047466}
   - component: {fileID: 1667047465}
   - component: {fileID: 1667047467}
+  - component: {fileID: 1667047468}
   m_Layer: 0
   m_Name: EditorData
   m_TagString: Untagged
@@ -1183,6 +1229,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a08682f32c6a4cf9950ba7f77cba44ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1667047468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667047464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd1cf29770942018a0611c31842a7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using UniFramework.Event;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace RhythmEditor
         public Sprite[] SwitchSprites;
         public RectTransform ScrollAreaContent;
 
+        private readonly EventGroup eventGroup = new EventGroup();
 
         private void Initialize()
         {
@@ -39,12 +41,27 @@ namespace RhythmEditor
             }
         }
 
+        private void UploadMusicComplete(IEventMessage eventMessage)
+        {
+            Initialize();
+        }
+
         #region Life
 
         private void Start()
         {
             Initialize();
           
+        }
+
+        private void OnEnable()
+        {
+            eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
+        }
+
+        private void OnDisable()
+        {
+            eventGroup.RemoveAllListener();
         }
 
         #endregion

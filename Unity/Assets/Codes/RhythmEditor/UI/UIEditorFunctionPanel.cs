@@ -9,6 +9,18 @@ namespace RhythmEditor
     {
         #region ButtonFunction
 
+        public void LoadLevel()
+        {
+            
+            EditorEventDefine.EventLoadLevelData.SendEventMessage();
+        }
+
+
+        public void SaveLevel()
+        {
+            EditorEventDefine.EventSaveLevelData.SendEventMessage();
+        }
+
         public void UploadMusic()
         {
             EditorEventDefine.EventUploadMusic.SendEventMessage();

@@ -203,7 +203,32 @@ namespace RhythmEditor
         }
 
         #endregion
+        
+        #region SaveLoad
+        
+        public class EventSaveLevelData : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventSaveLevelData();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        public class EventLoadLevelData : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventLoadLevelData();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        #endregion
     }
+    
 
   
 }

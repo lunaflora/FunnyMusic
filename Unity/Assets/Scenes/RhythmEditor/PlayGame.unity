@@ -641,8 +641,8 @@ MonoBehaviour:
   BeatEnd: {fileID: 1093851834}
   BeatParent: {fileID: 1590756567}
   BeatPrefabList:
-  - {fileID: 5351896216042170823, guid: ac59127715e916743bcc5060cda275f7, type: 3}
   - {fileID: 8724870359983946790, guid: 78136006a7e17a94a95b6b1b166a1c63, type: 3}
+  - {fileID: 5351896216042170823, guid: ac59127715e916743bcc5060cda275f7, type: 3}
   PlayDrumBeats: []
 --- !u!1 &2026649844
 GameObject:

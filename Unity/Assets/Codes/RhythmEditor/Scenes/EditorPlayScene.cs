@@ -19,6 +19,9 @@ namespace RhythmEditor
         public Transform BeatStart,BeatEnd,BeatParent;
         public GameObject[] BeatPrefabList;
 
+        /// <summary>
+        /// 游玩鼓点列表
+        /// </summary>
         public List<EditorPlayDrumBeat> PlayDrumBeats = new List<EditorPlayDrumBeat>();
         
         private readonly EventGroup eventGroup = new EventGroup();
@@ -28,6 +31,7 @@ namespace RhythmEditor
             eventGroup.AddListener<EditorEventDefine.EventCreateCrateDrumBeatData>(EventCreateCrateDrumBeatData);
             eventGroup.AddListener<EditorEventDefine.EventUpdateCurrentTime>(EventUpdateCurrentTime);
             eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
+            eventGroup.AddListener<EditorEventDefine.EventLoadLevelData>(OnLoadLevel);
         }
 
         private void OnDisable()
@@ -37,6 +41,24 @@ namespace RhythmEditor
 
 
         #region Event
+
+        /// <summary>
+        /// 打开关卡
+        /// </summary>
+        private void OnLoadLevel(IEventMessage eventMessage)
+        {
+            foreach (var drumBeat in PlayDrumBeats)
+            {
+                Destroy(drumBeat.gameObject);
+            }
+            PlayDrumBeats.Clear();
+
+            int ID;
+            List<DrumBeatData> drumBeatDatas = EditorDataManager.Instance.DrumBeatDatas;
+            DrumBeatData drumBeatData;
+            DrumBeatUIData drumBeatUIData;
+            DrumBeatSceneData drumBeatSceneData;
+        }
 
         private void EventCreateCrateDrumBeatData(IEventMessage message)
         {

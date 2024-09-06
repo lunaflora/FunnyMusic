@@ -41,6 +41,7 @@ namespace RhythmEditor
         private void UploadMusicComplete(IEventMessage eventMessage)
         {
             Initialize();
+            RefreshUIDrumBeatID();
         }
 
         private void OnDisable()

@@ -17,7 +17,8 @@ namespace RhythmEditor
         private void OnEnable()
         {
             eventGroup.AddListener<EditorEventDefine.EventUploadMusic>(OnUploadMusic);
-            eventGroup.AddListener<EditorEventDefine.EventUploadMusic>(OnSaveLevel);
+            eventGroup.AddListener<EditorEventDefine.EventSaveLevelData>(OnSaveLevel);
+            eventGroup.AddListener<EditorEventDefine.EventLoadLevelData>(OnLoadLevel);
         }
 
         private void OnDisable()
@@ -25,9 +26,47 @@ namespace RhythmEditor
             eventGroup.RemoveAllListener();
         }
 
-        private void OnSaveLevel(IEventMessage eventMessage)
+
+        /// <summary>
+        /// 打开关卡
+        /// </summary>
+        private void OnLoadLevel(IEventMessage eventMessage)
         {
             EditorEventDefine.EventSetCurrentTime.SendEventMessage(0);
+            
+            FilePropertyData openFile = new FilePropertyData();
+            
+            openFile.structSize = Marshal.SizeOf(openFile);
+            openFile.filter = "文件(*.level)\0*.level";
+            openFile.file = new string(new char[256]);
+            openFile.maxFile = openFile.file.Length;
+            openFile.fileTitle = new string(new char[64]);
+            openFile.maxFileTitle = openFile.fileTitle.Length;
+            string path = Application.streamingAssetsPath;
+            openFile.initialDir = path;
+            openFile.title = "打开关卡";
+            openFile.flags = 0x00080000 | 0x00001000 | 0x00000800 | 0x00000200 | 0x00000008;
+            
+            if (OpenFile(openFile))
+            {
+                FileInfo fileInfo = new FileInfo(openFile.file);
+                StreamReader streamReader = fileInfo.OpenText();
+                JsonUtility.FromJsonOverwrite(streamReader.ReadToEnd(), EditorDataManager.Instance);
+                streamReader.Dispose();
+                streamReader.Close();
+
+
+            }
+        }
+
+        /// <summary>
+        /// 保存关卡
+        /// </summary>
+        private void OnSaveLevel(IEventMessage eventMessage)
+        {
+           
+            EditorEventDefine.EventSetCurrentTime.SendEventMessage(0);
+           
             
             FilePropertyData openFile = new FilePropertyData();
             
@@ -42,9 +81,9 @@ namespace RhythmEditor
             openFile.title = "保存关卡";
             openFile.flags = 0x00080000 | 0x00001000 | 0x00000800 | 0x00000200 | 0x00000008;
             
-            if (OpenFile(openFile))
+            if (SaveFileAs(openFile))
             {
-                string filePath = "file://" + openFile.file;
+                string filePath = openFile.file;
                 if (!filePath.EndsWith(".level"))
                 {
                     filePath += ".level";
@@ -52,11 +91,17 @@ namespace RhythmEditor
 
                 FileInfo file = new FileInfo(filePath);
                 StreamWriter streamWriter = file.CreateText();
-                streamWriter.Write(JsonParser.Default.ToJson(EditorDataManager.Instance));
+                streamWriter.Write(JsonUtility.ToJson(EditorDataManager.Instance));
                 streamWriter.Dispose();
                 streamWriter.Close();
+                if (!string.IsNullOrEmpty(EditorDataManager.Instance.LoadingAudioPath))
+                {
+                    LoadAudioSource(EditorDataManager.Instance.LoadingAudioPath).Forget();
+                }
 
             }
+         
+
         }
 
         public void OnUploadMusic(IEventMessage eventMessage)

@@ -9,6 +9,14 @@ namespace RhythmEditor
     {
         public PlayerInput EditorInput;
         private readonly EventGroup eventGroup = new EventGroup();
+        public static InputSystem Input = null;
+
+
+
+        public void Awake()
+        {
+            Input = this;
+        }
 
         private void OnEnable()
         {
@@ -19,6 +27,11 @@ namespace RhythmEditor
         private void OnDisable()
         {
             eventGroup.RemoveAllListener();
+        }
+
+        public void ToggleInput(bool enable)
+        {
+            EditorInput.enabled = enable;
         }
 
         /// <summary>

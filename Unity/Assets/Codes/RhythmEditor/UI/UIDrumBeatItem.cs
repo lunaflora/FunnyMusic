@@ -1,9 +1,10 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RhythmEditor
 {
-    public class UIDrumBeatItem : MonoBehaviour
+    public class UIDrumBeatItem : MonoBehaviour,IPointerClickHandler
     {
         public TextMeshProUGUI DrumBeatID;
         public DrumBeatUIData DrumBeatUIData;
@@ -25,5 +26,9 @@ namespace RhythmEditor
         }
 
 
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            EditorEventDefine.EventQueryDrumBeatInfo.SendEventMessage(DrumBeatUIData);
+        }
     }
 }

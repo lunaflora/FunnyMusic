@@ -31,7 +31,7 @@ namespace RhythmEditor
             eventGroup.AddListener<EditorEventDefine.EventCreateCrateDrumBeatData>(EventCreateCrateDrumBeatData);
             eventGroup.AddListener<EditorEventDefine.EventUpdateCurrentTime>(EventUpdateCurrentTime);
             eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
-            eventGroup.AddListener<EditorEventDefine.EventLoadLevelData>(OnLoadLevel);
+            eventGroup.AddListener<EditorEventDefine.EventLoadedLevelData>(OnLoadLevel);
         }
 
         private void OnDisable()
@@ -58,6 +58,17 @@ namespace RhythmEditor
             DrumBeatData drumBeatData;
             DrumBeatUIData drumBeatUIData;
             DrumBeatSceneData drumBeatSceneData;
+
+            for (int i = 0; i < drumBeatDatas.Count; i++)
+            {
+                ID = drumBeatDatas[i].ID;
+                bool isExist = EditorDataManager.Instance.SearchDrumBeats(ID, out drumBeatData, out drumBeatUIData,
+                    out drumBeatSceneData);
+                if (isExist)
+                {
+                    CrateDrumBeatData(drumBeatData,drumBeatUIData, drumBeatSceneData);
+                }
+            }
         }
 
         private void EventCreateCrateDrumBeatData(IEventMessage message)
@@ -65,19 +76,25 @@ namespace RhythmEditor
             EditorEventDefine.EventCreateCrateDrumBeatData eventCreateCrateDrumBeatData =
                 message as EditorEventDefine.EventCreateCrateDrumBeatData;
 
-            int beatType = eventCreateCrateDrumBeatData.DrumBeatData.BeatType;
-            eventCreateCrateDrumBeatData.DrumBeatSceneData.Float_0 = BeatMoveTime;
+            CrateDrumBeatData(eventCreateCrateDrumBeatData.DrumBeatData, eventCreateCrateDrumBeatData.DrumBeatUIData,
+                eventCreateCrateDrumBeatData.DrumBeatSceneData);
+
+        }
+
+        public void CrateDrumBeatData(DrumBeatData drumBeatData, DrumBeatUIData drumBeatUIData,DrumBeatSceneData drumBeatSceneData)
+        {
+            int beatType = drumBeatData.BeatType;
+            drumBeatSceneData.Float_0 = BeatMoveTime;
 
             EditorPlayDrumBeat playDrumBeat =
                 Instantiate(BeatPrefabList[beatType], BeatParent).GetComponent<EditorPlayDrumBeat>();
             PlayDrumBeats.Add(playDrumBeat);
 
-            playDrumBeat.DrumBeatData = eventCreateCrateDrumBeatData.DrumBeatData;
-            playDrumBeat.DrumBeatSceneData = eventCreateCrateDrumBeatData.DrumBeatSceneData;
+            playDrumBeat.DrumBeatData = drumBeatData;
+            playDrumBeat.DrumBeatSceneData = drumBeatSceneData;
             playDrumBeat.BeatStart = BeatStart;
             playDrumBeat.BeatEnd = BeatEnd;
             playDrumBeat.UpdateDrumBeat(0);
-
         }
 
         /// <summary>

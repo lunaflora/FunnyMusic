@@ -12,7 +12,7 @@ namespace RhythmEditor
         public void LoadLevel()
         {
             
-            EditorEventDefine.EventLoadLevelData.SendEventMessage();
+            EditorEventDefine.EventLoadingLevelData.SendEventMessage();
         }
 
 

@@ -201,11 +201,49 @@ namespace RhythmEditor
                 UniEvent.SendMessage(msg);
             }
         }
+        
+        /// <summary>
+        /// 删除鼓点数据处理
+        /// </summary>
+        public class EventDeleteDrumBeatData : IEventMessage
+        {
+            public DrumBeatData DrumBeatData;
+            public DrumBeatSceneData DrumBeatSceneData;
+            public DrumBeatUIData DrumBeatUIData;
+            
+            public static void SendEventMessage(DrumBeatData drumBeatData, DrumBeatSceneData drumBeatSceneData,DrumBeatUIData drumBeatUIData)
+            {
+                var msg = new EventDeleteDrumBeatData();
+                msg.DrumBeatData = drumBeatData;
+                msg.DrumBeatSceneData = drumBeatSceneData;
+                msg.DrumBeatUIData = drumBeatUIData;
+                UniEvent.SendMessage(msg);
+            }
+
+        }
+        
+        /// <summary>
+        /// 查看鼓点信息
+        /// </summary>
+        public class EventQueryDrumBeatInfo : IEventMessage
+        {
+            public DrumBeatUIData DrumBeatUIData;
+            public static void SendEventMessage(DrumBeatUIData drumBeatUIData)
+            {
+                var msg = new EventQueryDrumBeatInfo();
+                msg.DrumBeatUIData = drumBeatUIData;
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
 
         #endregion
         
         #region SaveLoad
         
+        /// <summary>
+        /// 开始保存关卡
+        /// </summary>
         public class EventSaveLevelData : IEventMessage
         {
             public static void SendEventMessage()
@@ -216,11 +254,27 @@ namespace RhythmEditor
             }
         }
         
-        public class EventLoadLevelData : IEventMessage
+        /// <summary>
+        /// 开始加载关卡
+        /// </summary>
+        public class EventLoadingLevelData : IEventMessage
         {
             public static void SendEventMessage()
             {
-                var msg = new EventLoadLevelData();
+                var msg = new EventLoadingLevelData();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        /// <summary>
+        /// 关卡加载完成
+        /// </summary>
+        public class EventLoadedLevelData : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventLoadedLevelData();
               
                 UniEvent.SendMessage(msg);
             }

@@ -1200,6 +1200,7 @@ MonoBehaviour:
   PrintTrace: 0
   SystemMode: 0
   LoadingAudio: {fileID: 8300000, guid: 11f4b59207b89d64ba2f6219748da72c, type: 3}
+  LoadingAudioPath: 
   CurrentTime: 0
   DrumBeatDatas: []
   DrumBeatSceneDatas: []

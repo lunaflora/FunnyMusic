@@ -18,7 +18,7 @@ namespace RhythmEditor
         {
             eventGroup.AddListener<EditorEventDefine.EventUploadMusic>(OnUploadMusic);
             eventGroup.AddListener<EditorEventDefine.EventSaveLevelData>(OnSaveLevel);
-            eventGroup.AddListener<EditorEventDefine.EventLoadLevelData>(OnLoadLevel);
+            eventGroup.AddListener<EditorEventDefine.EventLoadingLevelData>(OnLoadLevel);
         }
 
         private void OnDisable()
@@ -55,6 +55,7 @@ namespace RhythmEditor
                 streamReader.Dispose();
                 streamReader.Close();
 
+                EditorEventDefine.EventLoadedLevelData.SendEventMessage();
 
             }
         }

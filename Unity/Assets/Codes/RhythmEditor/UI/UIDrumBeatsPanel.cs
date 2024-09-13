@@ -36,36 +36,82 @@ namespace RhythmEditor
         {
             eventGroup.AddListener<EditorEventDefine.EventCreateCrateDrumBeatData>(EventCreateCrateDrumBeatData);
             eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
+            eventGroup.AddListener<EditorEventDefine.EventLoadedLevelData>(OnLoadLevel);
         }
         
+        private void OnDisable()
+        {
+            eventGroup.RemoveAllListener();
+        }
+
+
+        /// <summary>
+        /// 打开关卡
+        /// </summary>
+        private void OnLoadLevel(IEventMessage eventMessage)
+        {
+            for (int i = UIDrumBeatItems.Count -1; i >= 0; i--)
+            {
+                Destroy(UIDrumBeatItems[i].gameObject);
+            }
+            
+            UIDrumBeatItems.Clear();
+            TrackID = 0;
+
+            int ID;
+            List<DrumBeatData> drumBeatDatas = EditorDataManager.Instance.DrumBeatDatas;
+            DrumBeatData drumBeatData;
+            DrumBeatUIData drumBeatUIData;
+            DrumBeatSceneData drumBeatSceneData;
+
+            for (int i = 0; i < drumBeatDatas.Count; i++)
+            {
+                ID = drumBeatDatas[i].ID;
+                bool isExist = EditorDataManager.Instance.SearchDrumBeats(ID, out drumBeatData, out drumBeatUIData,
+                    out drumBeatSceneData);
+                if (isExist)
+                {
+                    CrateDrumBeatData(drumBeatData,drumBeatUIData, drumBeatSceneData);
+                }
+            }
+
+        }
+
         private void UploadMusicComplete(IEventMessage eventMessage)
         {
             Initialize();
             RefreshUIDrumBeatID();
         }
 
-        private void OnDisable()
-        {
-            eventGroup.RemoveAllListener();
-        }
 
         private void EventCreateCrateDrumBeatData(IEventMessage message)
         {
             EditorEventDefine.EventCreateCrateDrumBeatData eventCreateCrateDrumBeatData =
                 message as EditorEventDefine.EventCreateCrateDrumBeatData;
 
-            int beatType = eventCreateCrateDrumBeatData.DrumBeatData.BeatType;
+            CrateDrumBeatData(eventCreateCrateDrumBeatData.DrumBeatData, eventCreateCrateDrumBeatData.DrumBeatUIData,
+                eventCreateCrateDrumBeatData.DrumBeatSceneData);
+
+
+
+        }
+
+        public void CrateDrumBeatData(DrumBeatData drumBeatData, DrumBeatUIData drumBeatUIData,
+            DrumBeatSceneData drumBeatSceneData)
+        {
+            int beatType = drumBeatData.BeatType;
             UIDrumBeatItem beatItem = Instantiate(UIDrumBeatItem[beatType], WaveformUITracks[TrackID])
                 .GetComponent<UIDrumBeatItem>();
-            beatItem.DrumBeatUIData = eventCreateCrateDrumBeatData.DrumBeatUIData;
+            beatItem.DrumBeatUIData = drumBeatUIData;
         
             UIDrumBeatItems.Add(beatItem);
             RefreshUIDrumBeatID();
-            eventCreateCrateDrumBeatData.DrumBeatUIData.Int_1 = TrackID;
+            drumBeatUIData.Int_1 = TrackID;
             TrackID++;
             TrackID = TrackID >= WaveformUITracks.Length ? 0 : TrackID;
             
         }
+        
 
         private void RefreshUIDrumBeatID()
         {

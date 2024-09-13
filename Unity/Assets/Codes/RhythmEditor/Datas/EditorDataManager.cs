@@ -15,6 +15,8 @@ namespace RhythmEditor
 
         public string LoadingAudioPath;
 
+        /// <summary>
+        /// </summary>
         public float CurrentTime = 0;
 
         public List<DrumBeatData> DrumBeatDatas = new List<DrumBeatData>();

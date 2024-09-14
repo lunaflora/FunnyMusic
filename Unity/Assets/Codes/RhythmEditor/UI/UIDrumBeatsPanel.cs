@@ -37,6 +37,8 @@ namespace RhythmEditor
             eventGroup.AddListener<EditorEventDefine.EventCreateCrateDrumBeatData>(EventCreateCrateDrumBeatData);
             eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
             eventGroup.AddListener<EditorEventDefine.EventLoadedLevelData>(OnLoadLevel);
+            eventGroup.AddListener<EditorEventDefine.EventDeleteDrumBeatData>(OnDeleteDrumBeatInfo);
+            eventGroup.AddListener<EditorEventDefine.EventUpdateDrumBeatData>(OnUpdateDrumBeatData);
         }
         
         private void OnDisable()
@@ -124,6 +126,26 @@ namespace RhythmEditor
                 UIDrumBeatItems[i].UpdateDrumBeatItem();
             }
         }
+        
+        public void OnDeleteDrumBeatInfo(IEventMessage eventMessage)
+        {
+            EditorEventDefine.EventDeleteDrumBeatData deleteDrumBeatData =
+                eventMessage as EditorEventDefine.EventDeleteDrumBeatData;
+
+            UIDrumBeatItem uiDrumBeatItem =
+                UIDrumBeatItems.Find(a => a.DrumBeatUIData == deleteDrumBeatData.DrumBeatUIData);
+
+            UIDrumBeatItems.Remove(uiDrumBeatItem);
+            DestroyImmediate(uiDrumBeatItem.gameObject);
+            
+
+        }
+
+        public void OnUpdateDrumBeatData(IEventMessage eventMessage)
+        {
+            RefreshUIDrumBeatID();
+        }
+
 
     }
 }

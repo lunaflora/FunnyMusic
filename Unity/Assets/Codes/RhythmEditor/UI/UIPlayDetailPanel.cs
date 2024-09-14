@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UniFramework.Event;
 using UnityEngine;
 
 namespace RhythmEditor
 {
+    /// <summary>
+    /// 鼓点编辑面板
+    /// </summary>
     public class UIPlayDetailPanel : MonoBehaviour
     {
         private readonly EventGroup eventGroup = new EventGroup();
@@ -23,7 +27,7 @@ namespace RhythmEditor
         private void OnEnable()
         {
             eventGroup.AddListener<EditorEventDefine.EventQueryDrumBeatInfo>(OnQueryDrumBeatInfo);
-            eventGroup.AddListener<EditorEventDefine.EventDeleteDrumBeatData>(OnDeleteDrumBeatInfo);
+           
         }
 
         private void OnDisable()
@@ -43,7 +47,7 @@ namespace RhythmEditor
                     out DrumBeatSceneData);
             if (!isExit)
             {
-                DrumBeatID.text = "Not Exist";
+                ShowNoData();
                 return;
             }
 
@@ -55,11 +59,41 @@ namespace RhythmEditor
 
         }
 
-        public void OnDeleteDrumBeatInfo(IEventMessage eventMessage)
+        public void EditDrumBeatTime(string time)
         {
+            Debug.Log(DrumBeaTime.text);
+            if(string.IsNullOrEmpty(DrumBeaTime.text))
+                return;
+            float editTime = float.Parse(DrumBeaTime.text);
+            if (editTime < 0)
+            {
+                return;
+            }
+
+            DrumBeatData.BeatTime = editTime;
+            EditorDataManager.Instance.DrumBeatDatas.Sort(DrumBeatData.SortTime);
+            EditorEventDefine.EventUpdateDrumBeatData.SendEventMessage();
+        }
+        
+        /// <summary>
+        /// 这里有个问题，收到的time为空
+        /// </summary>
+        /// <param name="time"></param>
+        public void EditDrumBeatMoveTime(string time)
+        {
+            if(string.IsNullOrEmpty(DrumBeaMoveTime.text))
+                return;
+            float editTime = float.Parse(DrumBeaMoveTime.text);
+            if (editTime < 0)
+            {
+                return;
+            }
             
+            DrumBeatSceneData.Float_0 = editTime;
+            EditorEventDefine.EventUpdateDrumBeatData.SendEventMessage();
         }
 
+     
         #region ButtonFunction
 
         public void JumpDrumBeatTime()
@@ -78,11 +112,44 @@ namespace RhythmEditor
             {
                 return;
             }
+
+            int nextIndex = DrumBeatUIData.Int_0;
+            EditorDataManager.Instance.DrumBeatDatas.Remove(DrumBeatData);
+            EditorDataManager.Instance.DrumBeatUIDatas.Remove(DrumBeatUIData);
+            EditorDataManager.Instance.DrumBeatSceneDatas.Remove(DrumBeatSceneData);
             
+            EditorEventDefine.EventDeleteDrumBeatData.SendEventMessage(DrumBeatData,DrumBeatSceneData,DrumBeatUIData);
+            DrumBeatData = null;
+            DrumBeatUIData = null;
+            DrumBeatSceneData = null;
+
+            List<DrumBeatData> drumBeatDatas = EditorDataManager.Instance.DrumBeatDatas;
+            if (nextIndex >= drumBeatDatas.Count)
+            {
+                nextIndex--;
+                if (nextIndex < 0)
+                { 
+                    ShowNoData();
+                    return;
+                }
+            }
+
+            EditorDataManager.Instance.SearchDrumBeats(drumBeatDatas[nextIndex].ID, out DrumBeatData,
+                out DrumBeatUIData, out DrumBeatSceneData);
             
+            EditorEventDefine.EventQueryDrumBeatInfo.SendEventMessage(DrumBeatUIData);
         }
-        
-        
+
+
+        #endregion
+
+        #region UIShow
+
+        private void ShowNoData()
+        {
+            DrumBeatID.text = "Not Exist";
+        }
+
         #endregion
         
     }

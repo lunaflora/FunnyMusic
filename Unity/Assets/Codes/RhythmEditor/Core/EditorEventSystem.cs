@@ -113,6 +113,30 @@ namespace RhythmEditor
                 UniEvent.SendMessage(msg);
             }
         }
+        
+        /// <summary>
+        /// 进入输入模式
+        /// </summary>
+        public class EventEnterInputMode : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventEnterInputMode();
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        /// <summary>
+        /// 退出输入模式
+        /// </summary>
+        public class EventExitInputMode : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventExitInputMode();
+                UniEvent.SendMessage(msg);
+            }
+        }
 
         #region DrumBeats
 
@@ -175,7 +199,19 @@ namespace RhythmEditor
             }
 
         }
-        
+
+        /// <summary>
+        /// 更新鼓点
+        /// </summary>
+        public class EventUpdateDrumBeatData : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventUpdateDrumBeatData();
+                UniEvent.SendMessage(msg);
+            }
+        }
+
         /// <summary>
         /// 上传歌曲
         /// </summary>

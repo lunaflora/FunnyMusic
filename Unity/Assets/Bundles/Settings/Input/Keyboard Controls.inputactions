@@ -407,6 +407,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "InputMode",
+            "id": "b2f247b6-01e0-4173-9294-7c65c2cd6470",
+            "actions": [
+                {
+                    "name": "Delete",
+                    "type": "Button",
+                    "id": "a6ade35e-a334-4038-b9c9-d338b550278d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2ad149ff-f16a-456e-878a-12f53a072810",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delete",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

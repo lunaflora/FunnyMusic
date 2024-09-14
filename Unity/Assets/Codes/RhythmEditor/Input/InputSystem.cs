@@ -22,6 +22,8 @@ namespace RhythmEditor
         {
            
             eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
+            eventGroup.AddListener<EditorEventDefine.EventEnterInputMode>(OnEnterInputMode);
+            eventGroup.AddListener<EditorEventDefine.EventExitInputMode>(OnExitInputMode);
         }
 
         private void OnDisable()
@@ -103,6 +105,35 @@ namespace RhythmEditor
             }
         }
 
+        public void OnEnterInputMode(IEventMessage message)
+        {
+            switch (EditorDataManager.Instance.SystemMode)
+            {
+                case SystemMode.EditorMode:
+                    EditorInput.SwitchCurrentActionMap("InputMode");
+                    break;
+                default:
+                    return;
+                
+            }
+
+            EditorDataManager.Instance.SystemMode = SystemMode.InputMode;
+
+        }
        
+        public void OnExitInputMode(IEventMessage message)
+        {
+            switch (EditorDataManager.Instance.SystemMode)
+            {
+                case SystemMode.InputMode:
+                    EditorInput.SwitchCurrentActionMap("EditorMode");
+                    break;
+                default:
+                    return;
+                
+            }
+
+            EditorDataManager.Instance.SystemMode = SystemMode.EditorMode;
+        }
     }
 }

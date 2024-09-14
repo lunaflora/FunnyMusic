@@ -7,7 +7,8 @@ namespace RhythmEditor
     {
         EditorMode,
         DemoMode,
-        RecordMode
+        RecordMode,
+        InputMode
     }
 
     /// <summary>

@@ -317,6 +317,32 @@ namespace RhythmEditor
         }
         
         #endregion
+
+
+        #region Demo试玩模式输入事件
+
+        public class EventDemoPoint1 : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoPoint1();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        
+        public class EventDemoPoint2 : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoPoint2();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+
+        #endregion
     }
     
 

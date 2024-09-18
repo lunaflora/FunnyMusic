@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 430881490}
   - component: {fileID: 430881491}
   - component: {fileID: 430881492}
+  - component: {fileID: 430881493}
   m_Layer: 0
   m_Name: InputSystem
   m_TagString: Untagged
@@ -459,6 +460,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 424ae4b9-aeee-4209-9310-0537fb95c6d4
     m_ActionName: RecordMode/Pont2[/Keyboard/j,/Keyboard/k,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881493}
+        m_TargetAssemblyTypeName: RhythmEditor.DemoModelInput, Assembly-CSharp
+        m_MethodName: DemoPoint1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8d4c4105-5693-4edb-bd16-e574dfe024ba
+    m_ActionName: DemoMode/Point1[/Keyboard/s,/Keyboard/d,/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 430881493}
+        m_TargetAssemblyTypeName: RhythmEditor.DemoModelInput, Assembly-CSharp
+        m_MethodName: DemoPoint2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4b91e901-133b-4c34-b068-b0f99f2c0c3d
+    m_ActionName: DemoMode/Point2[/Keyboard/j,/Keyboard/k,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6ade35e-a334-4038-b9c9-d338b550278d
+    m_ActionName: InputMode/Delete
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: EditorMode
@@ -514,6 +551,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b25f45d04fa24d438a2d4f4c64894b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &430881493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430881487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a762a6a8b954da3abb292430b29d99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &520171826

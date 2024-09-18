@@ -64,6 +64,18 @@ namespace RhythmEditor
 
         }
 
+
+        #region 打击判定参数
+
+        public float MissValue = 0.9f;
+        public float BadValue = 0.6f;
+        public float GreatValue = 0.4f;
+        public float CoolValue = 0.2f;
+
+        public float JudgeTimeCorrect = 0.25f;
+
+        #endregion
+
     }
     
 }

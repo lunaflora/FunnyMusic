@@ -319,7 +319,7 @@ namespace RhythmEditor
         #endregion
 
 
-        #region Demo试玩模式输入事件
+        #region Demo试玩模式事件
 
         public class EventDemoPoint1 : IEventMessage
         {
@@ -337,6 +337,43 @@ namespace RhythmEditor
             public static void SendEventMessage()
             {
                 var msg = new EventDemoPoint2();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+        public class EventDemoDrumMiss: IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoDrumMiss();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        public class EventDemoDrumCool : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoDrumCool();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        public class EventDemoDrumGreat : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoDrumGreat();
+              
+                UniEvent.SendMessage(msg);
+            }
+        }
+        public class EventDemoDrumBad : IEventMessage
+        {
+            public static void SendEventMessage()
+            {
+                var msg = new EventDemoDrumBad();
               
                 UniEvent.SendMessage(msg);
             }

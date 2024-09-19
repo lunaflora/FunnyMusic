@@ -3095,6 +3095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712986409}
   - component: {fileID: 1712986410}
+  - component: {fileID: 1712986411}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -3138,6 +3139,21 @@ MonoBehaviour:
   - {fileID: 8724870359983946790, guid: 78136006a7e17a94a95b6b1b166a1c63, type: 3}
   - {fileID: 5351896216042170823, guid: ac59127715e916743bcc5060cda275f7, type: 3}
   PlayDrumBeats: []
+  InDemoMode: 0
+  JudgeBeatIndex: 0
+--- !u!114 &1712986411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712986408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2711465a1abd4fb5b93ffa50994fdeff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayEffect: {fileID: 1899746748}
 --- !u!1 &1815125003
 GameObject:
   m_ObjectHideFlags: 0

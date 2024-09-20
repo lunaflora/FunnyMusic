@@ -24,7 +24,8 @@ namespace RhythmEditor
         private void Awake()
         {
             Entry();
-           
+            Application.targetFrameRate = 60;
+
         }
 
         private void Start()

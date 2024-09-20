@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FLib;
 using UniFramework.Event;
 using UnityEngine;
 
@@ -60,27 +61,12 @@ namespace RhythmEditor
             eventGroup.RemoveAllListener();
         }
 
-
-        #region Event
-        
-        private void OnDemoPoint2(IEventMessage eventMessage)
+        private void JudgeResult(float judgeTimeOffset)
         {
-            if(JudgeBeatIndex < 0)
-                return;
-
-            float currentTime = EditorDataManager.Instance.CurrentTime;
-            DrumBeatData drumBeatData = DrumBeatDatas[JudgeBeatIndex];
-
-            if (drumBeatData.BeatType != 1)
-            {
-                return;
-            }
-
-            float judgeTimeOffset =
-                Mathf.Abs(currentTime + EditorDataManager.Instance.JudgeTimeCorrect - drumBeatData.BeatType);
             if (judgeTimeOffset < EditorDataManager.Instance.CoolValue)
             {
                 EditorEventDefine.EventDemoDrumCool.SendEventMessage();
+                FDebug.Print("JudgeResult Cool");
                 if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
                 {
                     JudgeBeatIndex++;
@@ -94,6 +80,7 @@ namespace RhythmEditor
             if (judgeTimeOffset < EditorDataManager.Instance.GreatValue)
             {
                 EditorEventDefine.EventDemoDrumGreat.SendEventMessage();
+                FDebug.Print("JudgeResult Great");
                 if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
                 {
                     JudgeBeatIndex++;
@@ -107,6 +94,7 @@ namespace RhythmEditor
             if (judgeTimeOffset < EditorDataManager.Instance.BadValue)
             {
                 EditorEventDefine.EventDemoDrumBad.SendEventMessage();
+                FDebug.Print("JudgeResult Bad");
                 if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
                 {
                     JudgeBeatIndex++;
@@ -120,6 +108,7 @@ namespace RhythmEditor
             if (judgeTimeOffset < EditorDataManager.Instance.MissValue)
             {
                 EditorEventDefine.EventDemoDrumMiss.SendEventMessage();
+                FDebug.Print("JudgeResult Miss");
                 if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
                 {
                     JudgeBeatIndex++;
@@ -131,12 +120,33 @@ namespace RhythmEditor
             }
         }
 
+
+        #region Event
+        
+        private void OnDemoPoint2(IEventMessage eventMessage)
+        {
+            if(JudgeBeatIndex < 0)
+                return;
+
+            float currentTime = EditorDataManager.Instance.CurrentPlayTime;
+            DrumBeatData drumBeatData = DrumBeatDatas[JudgeBeatIndex];
+
+            if (drumBeatData.BeatType != 1)
+            {
+                return;
+            }
+
+            float judgeTimeOffset =
+                Mathf.Abs(currentTime + EditorDataManager.Instance.JudgeTimeCorrect - drumBeatData.BeatTime);
+            JudgeResult(judgeTimeOffset);
+        }
+
         private void OnDemoPoint1(IEventMessage eventMessage)
         {
            if(JudgeBeatIndex < 0)
                return;
 
-           float currentTime = EditorDataManager.Instance.CurrentTime;
+           float currentTime = EditorDataManager.Instance.CurrentPlayTime;
            DrumBeatData drumBeatData = DrumBeatDatas[JudgeBeatIndex];
 
            if (drumBeatData.BeatType != 0)
@@ -145,57 +155,8 @@ namespace RhythmEditor
            }
 
            float judgeTimeOffset =
-               Mathf.Abs(currentTime + EditorDataManager.Instance.JudgeTimeCorrect - drumBeatData.BeatType);
-           if (judgeTimeOffset < EditorDataManager.Instance.CoolValue)
-           {
-               EditorEventDefine.EventDemoDrumCool.SendEventMessage();
-               if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
-               {
-                   JudgeBeatIndex++;
-               }
-               else
-               {
-                   JudgeBeatIndex = -1;
-               }
-           }
-
-           if (judgeTimeOffset < EditorDataManager.Instance.GreatValue)
-           {
-               EditorEventDefine.EventDemoDrumGreat.SendEventMessage();
-               if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
-               {
-                   JudgeBeatIndex++;
-               }
-               else
-               {
-                   JudgeBeatIndex = -1;
-               }
-           }
-           
-           if (judgeTimeOffset < EditorDataManager.Instance.BadValue)
-           {
-               EditorEventDefine.EventDemoDrumBad.SendEventMessage();
-               if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
-               {
-                   JudgeBeatIndex++;
-               }
-               else
-               {
-                   JudgeBeatIndex = -1;
-               }
-           }
-           if (judgeTimeOffset < EditorDataManager.Instance.MissValue)
-           {
-               EditorEventDefine.EventDemoDrumMiss.SendEventMessage();
-               if (JudgeBeatIndex + 1 < DrumBeatDatas.Count)
-               {
-                   JudgeBeatIndex++;
-               }
-               else
-               {
-                   JudgeBeatIndex = -1;
-               }
-           }
+               Mathf.Abs(currentTime + EditorDataManager.Instance.JudgeTimeCorrect - drumBeatData.BeatTime);
+           JudgeResult(judgeTimeOffset);
         }
         
         private void OnExitRecordMode(IEventMessage eventMessage)
@@ -216,7 +177,7 @@ namespace RhythmEditor
         private void OnEnterDemoMode(IEventMessage eventMessage)
         {
             InDemoMode = true;
-            float currentTime = EditorDataManager.Instance.CurrentTime;
+            float currentTime = EditorDataManager.Instance.CurrentPlayTime;
             JudgeBeatIndex = -1;
             JudgeBeatIndex = EditorDataManager.Instance.DrumBeatDatas.FindIndex(a => currentTime < a.BeatTime);
             
@@ -300,7 +261,7 @@ namespace RhythmEditor
                 return;
             }
 
-            float currentTime = EditorDataManager.Instance.CurrentTime;
+            float currentTime = EditorDataManager.Instance.CurrentPlayTime;
             DrumBeatData drumBeatData = DrumBeatDatas[JudgeBeatIndex];
 
             if (currentTime + EditorDataManager.Instance.JudgeTimeCorrect >

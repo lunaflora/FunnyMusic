@@ -20,7 +20,7 @@ namespace RhythmEditor
 
             float beatTime = drumBeatData.BeatTime;
             RectTransform rectTransform = GetComponent<RectTransform>();
-            rectTransform.localPosition = new Vector3(beatTime * UIConstValue.UIWidthScale, 0, 0);
+            rectTransform.localPosition = new Vector3(beatTime * UIConstValue.UIWidthScale + rectTransform.sizeDelta.x, 0, 0);
             
 
         }

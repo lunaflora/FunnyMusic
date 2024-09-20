@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace RhythmEditor
 {
@@ -8,11 +9,12 @@ namespace RhythmEditor
         public DrumBeatSceneData DrumBeatSceneData;
 
         public Transform BeatStart,BeatEnd;
+        
 
         public void UpdateDrumBeat(float updateTime = -1)
         {
             float beatTime = DrumBeatData.BeatTime;
-            float currentTime = updateTime == -1 ? EditorDataManager.Instance.CurrentTime : updateTime;
+            float currentTime = updateTime == -1 ? EditorDataManager.Instance.CurrentPlayTime : updateTime;
 
             //剩余触发时间 beatTime - currentTime
             float beatPosPercent = Mathf.Clamp((beatTime - currentTime) / DrumBeatSceneData.Float_0, 0, 1);

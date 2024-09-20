@@ -34,7 +34,7 @@ namespace RhythmEditor
 
         private void EventUpdateCurrentTime(IEventMessage message)
         {
-            float newTime = EditorDataManager.Instance.CurrentTime;
+            float newTime = EditorDataManager.Instance.CurrentAudioTime;
             UITimeFrame.anchoredPosition = new Vector2(newTime * UIConstValue.UIWidthScale, 0);
             TextTimeFrame.text = newTime.ToString(".00");
         }
@@ -44,7 +44,7 @@ namespace RhythmEditor
             EditorEventDefine.EventSetCurrentTime setCurrentTime = message as EditorEventDefine.EventSetCurrentTime;
             UITimeFrame.anchoredPosition = new Vector2(setCurrentTime.CurrentTime * UIConstValue.UIWidthScale, 0);
             TextTimeFrame.text = setCurrentTime.CurrentTime.ToString(".00");
-            EditorDataManager.Instance.CurrentTime = setCurrentTime.CurrentTime;
+            EditorDataManager.Instance.CurrentAudioTime = setCurrentTime.CurrentTime;
         }
 
         public void OnPointerClick(PointerEventData eventData)

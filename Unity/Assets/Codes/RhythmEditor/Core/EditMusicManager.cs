@@ -28,6 +28,7 @@ namespace RhythmEditor
         /// </summary>
         private void OnExitDemo()
         {
+            EditorDataManager.Instance.CurrentPlayTime = 0;
             BGMSource.Pause();
         }
         
@@ -36,7 +37,7 @@ namespace RhythmEditor
         /// </summary>
         private void OnEnterDemo()
         {
-            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            EditorDataManager.Instance.CurrentPlayTime = BGMSource.time;
             BGMSource.Play();
         }
 
@@ -45,7 +46,7 @@ namespace RhythmEditor
         /// </summary>
         private void DoRecord()
         {
-            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            EditorDataManager.Instance.CurrentAudioTime = BGMSource.time;
             EditorEventDefine.EventUpdateCurrentTime.SendEventMessage();
             
             if (BGMSource.clip.length - BGMSource.time < 0.02f)
@@ -59,8 +60,12 @@ namespace RhythmEditor
         /// </summary>
         private void DoDemo()
         {
-            EditorDataManager.Instance.CurrentTime = BGMSource.time;
+            EditorDataManager.Instance.CurrentAudioTime = BGMSource.time;
+            EditorDataManager.Instance.CurrentPlayTime += Time.deltaTime;
             EditorEventDefine.EventUpdateCurrentTime.SendEventMessage();
+            
+
+            //Debug.Log($"{Time.deltaTime}    {EditorDataManager.Instance.CurrentAudioTime}");
 
             if (BGMSource.clip.length - BGMSource.time < 0.02f)
             {

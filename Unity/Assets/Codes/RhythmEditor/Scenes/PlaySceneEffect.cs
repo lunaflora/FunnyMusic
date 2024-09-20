@@ -29,10 +29,7 @@ namespace RhythmEditor
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                PlayEffect.SendEvent("Miss");
-            }
+           
         }
         
 

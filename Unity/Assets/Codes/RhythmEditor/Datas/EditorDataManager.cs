@@ -16,8 +16,13 @@ namespace RhythmEditor
         public string LoadingAudioPath;
 
         /// <summary>
+        /// 当前音频播放的时间
         /// </summary>
-        public float CurrentTime = 0;
+        public float CurrentAudioTime = 0;
+        /// <summary>
+        /// 鼓点更新的实际线性时间
+        /// </summary>
+        public float CurrentPlayTime = 0;
 
         public List<DrumBeatData> DrumBeatDatas = new List<DrumBeatData>();
         public List<DrumBeatSceneData> DrumBeatSceneDatas = new List<DrumBeatSceneData>();

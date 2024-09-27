@@ -11,6 +11,14 @@ namespace RhythmEditor
         InputMode
     }
 
+    public enum LevelDifficulty
+    {
+        Easy,
+        Normal,
+        Hard,
+        NightMare
+    }
+
     /// <summary>
     /// 鼓点基础数据
     /// </summary>

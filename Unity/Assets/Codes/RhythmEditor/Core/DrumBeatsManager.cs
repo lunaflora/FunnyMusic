@@ -45,6 +45,7 @@ namespace RhythmEditor
             drumBeatData.ID = newID;
             drumBeatData.BeatTime = EditorDataManager.Instance.CurrentAudioTime;
             drumBeatData.BeatType = index;
+            
 
             drumBeatUIData.ID = newID;
             drumBeatSceneData.ID = newID;

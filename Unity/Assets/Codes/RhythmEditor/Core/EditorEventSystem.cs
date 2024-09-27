@@ -380,6 +380,42 @@ namespace RhythmEditor
         }
 
         #endregion
+
+        #region 音量相关
+
+        public class EventSetMainVolume : IEventMessage
+        {
+            public float Volume = 0;
+            public static void SendEventMessage(float volume)
+            {
+                var msg = new EventSetMainVolume();
+                msg.Volume = volume;
+                UniEvent.SendMessage(msg);
+            }
+        }
+        public class EventSetSongVolume : IEventMessage
+        {
+            public float Volume = 0;
+            public static void SendEventMessage(float volume)
+            {
+                var msg = new EventSetSongVolume();
+                msg.Volume = volume;
+                UniEvent.SendMessage(msg);
+            }
+        }
+        public class EventSetBackgoundVolume : IEventMessage
+        {
+            public float Volume = 0;
+            public static void SendEventMessage(float volume)
+            {
+                var msg = new EventSetBackgoundVolume();
+                msg.Volume = volume;
+                UniEvent.SendMessage(msg);
+            }
+        }
+        
+
+        #endregion
     }
     
 

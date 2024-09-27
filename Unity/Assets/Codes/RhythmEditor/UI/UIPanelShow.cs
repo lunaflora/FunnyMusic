@@ -31,6 +31,18 @@ namespace RhythmEditor
             }
         }
 
+        public void HidePanel(bool changeIcon)
+        {
+            Panel.alpha = 0;
+            Panel.interactable = false;
+            Panel.blocksRaycasts = false;
+
+            if (changeIcon)
+            {
+                SwitchImage.sprite = SwitchIcons[1];
+            }
+        }
+
         private void DisablePanel()
         {
             Panel.alpha = 0;

@@ -114,8 +114,12 @@ namespace RhythmEditor
             EditorEventSystem.Instance.OnExitRecordMode += OnExitDemo;
             eventGroup.AddListener<EditorEventDefine.EventUploadMusicComplete>(UploadMusicComplete);
             eventGroup.AddListener<EditorEventDefine.EventSetCurrentTime>(EventSetCurrentTime);
+            eventGroup.AddListener<EditorEventDefine.EventSetMainVolume>(OnSetMainVolume);
+            eventGroup.AddListener<EditorEventDefine.EventSetSongVolume>(OnSetSongVolume);
+            eventGroup.AddListener<EditorEventDefine.EventSetBackgoundVolume>(OnSetBackgoundVolume);
         }
 
+      
         private void OnDisable()
         {
             EditorEventSystem.Instance.OnEnterDemoMode -= OnEnterDemo;
@@ -125,6 +129,38 @@ namespace RhythmEditor
             
             eventGroup.RemoveAllListener();
         }
+
+        #endregion
+
+
+        #region SetVolume
+
+        private void OnSetBackgoundVolume(IEventMessage eventMessage)
+        {
+            EditorEventDefine.EventSetBackgoundVolume eventSetBackgoundVolume =
+                eventMessage as EditorEventDefine.EventSetBackgoundVolume;
+
+            BGMSource.outputAudioMixerGroup.audioMixer.SetFloat("BackGroundVolume", eventSetBackgoundVolume.Volume);
+
+        }
+
+        private void OnSetSongVolume(IEventMessage eventMessage)
+        {
+            EditorEventDefine.EventSetSongVolume eventSetSongVolume =
+                eventMessage as EditorEventDefine.EventSetSongVolume;
+            
+            BGMSource.outputAudioMixerGroup.audioMixer.SetFloat("SongVolume", eventSetSongVolume.Volume);
+        }
+
+        private void OnSetMainVolume(IEventMessage eventMessage)
+        {
+            EditorEventDefine.EventSetMainVolume eventSetMainVolume =
+                eventMessage as EditorEventDefine.EventSetMainVolume;
+            
+            BGMSource.outputAudioMixerGroup.audioMixer.SetFloat("MainVolume", eventSetMainVolume.Volume);
+        }
+
+        
 
         #endregion
 

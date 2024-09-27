@@ -28,6 +28,7 @@ namespace RhythmEditor
         public List<DrumBeatSceneData> DrumBeatSceneDatas = new List<DrumBeatSceneData>();
         public List<DrumBeatUIData> DrumBeatUIDatas = new List<DrumBeatUIData>();
 
+        public LevelDifficulty LevelDifficulty = LevelDifficulty.Normal;
         
         /// <summary>
         /// 搜寻鼓点信息by ID
@@ -78,6 +79,15 @@ namespace RhythmEditor
         public float CoolValue = 0.2f;
 
         public float JudgeTimeCorrect = 0.25f;
+
+        #endregion
+
+        #region 音量控制
+
+        public float MainVolume;
+        public float BackGroundVolume;
+        public float SongVolume;
+
 
         #endregion
 

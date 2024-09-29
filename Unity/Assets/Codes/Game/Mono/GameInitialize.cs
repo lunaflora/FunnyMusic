@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Core;
 using Cysharp.Threading.Tasks;
 using FLib;
+using Framework;
 using UnityEngine;
 
 namespace Game
@@ -11,12 +13,15 @@ namespace Game
     public class GameInitialize : MonoBehaviour
     {
         [Comment("FrameRate make sure the framerate is high enough on mobile")]
-        public int forcedFrameRate = 60;
+        public int ForcedFrameRate = 60;
         
         private void Awake()
         {
-            Application.targetFrameRate = forcedFrameRate;
-            
+            Application.targetFrameRate = ForcedFrameRate;
+            GameWorld.Start(new List<Assembly>()
+            {
+                (typeof(GameInitialize).Assembly)
+            },"MusicWorld");
             InitGameSingleton();
        
         }
@@ -39,16 +44,18 @@ namespace Game
         // Update is called once per frame
         private void Update()
         {
+            GameWorld.Update();
         
         }
 
         private void LateUpdate()
         {
-            
+            GameWorld.LateUpdate();
         }
 
         private void OnApplicationQuit()
         {
+           
             
         }
 

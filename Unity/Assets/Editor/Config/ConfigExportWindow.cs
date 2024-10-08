@@ -14,6 +14,6 @@ namespace Framework.Editor
         /// <summary>
         /// 监视源文件夹文件变化
         /// </summary>
-        private static FileSystemWatcher fileSystemWatcher = null;
+       // private static FileSystemWatcher fileSystemWatcher = null;
     }
 }

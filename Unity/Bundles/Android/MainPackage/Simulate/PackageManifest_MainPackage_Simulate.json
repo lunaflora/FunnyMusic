@@ -1,0 +1,110 @@
+{
+    "FileVersion": "2.0.0",
+    "EnableAddressable": false,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "MainPackage",
+    "PackageVersion": "Simulate",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/GameMain/GlobalVolumeProfile.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/GameMain.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/SampleScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/RhythmEditor/BackGround.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/RhythmEditor/PlayGame.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/RhythmEditor/RhythmEditor.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/RhythmEditor/UI.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Scenes/RhythmEditor/RhythmEditor/GlobalVolumeProfile.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_scenes_gamemain.bundle",
+            "UnityCRC": 0,
+            "FileHash": "a15cdba83eb78194be26bf9100be9356",
+            "FileCRC": "00000000",
+            "FileSize": 2489,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_scenes.bundle",
+            "UnityCRC": 0,
+            "FileHash": "4ff950aaacb68b4f76d71289621c420c",
+            "FileCRC": "00000000",
+            "FileSize": 38857,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_scenes_rhythmeditor.bundle",
+            "UnityCRC": 0,
+            "FileHash": "53ca29819e0c45cf5ef9c5eec209b4d8",
+            "FileCRC": "00000000",
+            "FileSize": 467765,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_scenes_rhythmeditor_rhythmeditor.bundle",
+            "UnityCRC": 0,
+            "FileHash": "87e6c7a5a94b0cafdd6f19f178d3b6c3",
+            "FileCRC": "00000000",
+            "FileSize": 2385,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        }
+    ]
+}

@@ -42,6 +42,14 @@ namespace FunnyMusic
             
             //2.核心组件
             GameWorld.World.AddComponent<InputComponent>();
+            GameWorld.World.AddComponent<GlobalGameObjectComponent>();
+
+        }
+
+        async UniTask InitGameModule()
+        {
+            
+            var BattlePrefab = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath)
             
         }
         

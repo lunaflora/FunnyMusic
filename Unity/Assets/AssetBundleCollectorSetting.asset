@@ -24,19 +24,6 @@ MonoBehaviour:
     AutoCollectShaders: 1
     IgnoreRuleName: NormalIgnoreRule
     Groups:
-    - GroupName: Notes
-      GroupDesc: 
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Bundles/Notes
-        CollectorGUID: 8261f3f448acfa64c8c2ca9e06b92a6f
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
     - GroupName: Scene
       GroupDesc: 
       AssetTags: 
@@ -44,6 +31,32 @@ MonoBehaviour:
       Collectors:
       - CollectPath: Assets/Scenes
         CollectorGUID: a526288271b9f3045aed14c547f85b47
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Battle
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/Battle
+        CollectorGUID: 6781883609dd12e4c8882f1bdfdcf805
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: MusicPlay
+      GroupDesc: MusicPlay
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Bundles/MusicPlay
+        CollectorGUID: 80b68004126cf604b82947161629a0a0
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory

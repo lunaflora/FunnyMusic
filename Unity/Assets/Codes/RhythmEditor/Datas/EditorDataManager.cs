@@ -30,6 +30,17 @@ namespace RhythmEditor
 
         public LevelDifficulty LevelDifficulty = LevelDifficulty.Normal;
         
+        #region Music Spped
+
+        public float Bpm = 120;
+        
+        public float Crochet => 60f / Bpm;
+        public float HalfCrochet => 30f / Bpm;
+        public float QuarterCrochet => 15f / Bpm;
+        
+
+        #endregion
+        
         /// <summary>
         /// 搜寻鼓点信息by ID
         /// </summary>

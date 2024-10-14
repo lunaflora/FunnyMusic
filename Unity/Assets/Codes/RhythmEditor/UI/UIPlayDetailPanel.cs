@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RhythmTool;
 using TMPro;
 using UniFramework.Event;
 using UnityEngine;
@@ -23,17 +24,67 @@ namespace RhythmEditor
         private DrumBeatData DrumBeatData;
         private DrumBeatUIData DrumBeatUIData;
         private DrumBeatSceneData DrumBeatSceneData;
-      
+        public TextMeshProUGUI Bpm;
+
+        #region MyRegion
+
+        public RhythmData RhythmData;
+        public RhythmAnalyzer RhythmAnalyzer;
+
+        #endregion
+
+        private void Start()
+        {
+            RhythmAnalyzer.Initialized += OnRhythmAnalyzeComplete;
+        }
+
         private void OnEnable()
         {
             eventGroup.AddListener<EditorEventDefine.EventQueryDrumBeatInfo>(OnQueryDrumBeatInfo);
-           
+            eventGroup.AddListener<EditorEventDefine.EventLoadedLevelData>(OnLoadLevel);
+
         }
 
         private void OnDisable()
         {
             eventGroup.RemoveAllListener();
         }
+
+        /// <summary>
+        /// 打开关卡
+        /// </summary>
+        private void OnLoadLevel(IEventMessage eventMessage)
+        {
+            Bpm.text = $"{EditorDataManager.Instance.Bpm}";
+        }
+
+        #region AnalyzeAudio 音频分析
+
+        public void AnalyzeAudio()
+        {
+            if (EditorDataManager.Instance.LoadingAudio != null)
+            { RhythmAnalyzer.Analyze(EditorDataManager.Instance.LoadingAudio);
+               
+            }
+        }
+
+        private void OnRhythmAnalyzeComplete(RhythmData rhythmData)
+        {
+            RhythmData = rhythmData;
+            Track<Beat> track = rhythmData.GetTrack<Beat>();
+            List<Beat> beatFeatures = new List<Beat>();
+            track.GetFeatures(beatFeatures,1,5);
+            float bpm = 120;
+            foreach (var beat in beatFeatures)
+            {
+                bpm = Mathf.Round(beat.bpm * 10) / 10;
+            }
+
+            Bpm.text = $"{bpm}";
+            EditorDataManager.Instance.Bpm = bpm;
+        }
+
+        #endregion
 
         public void OnQueryDrumBeatInfo(IEventMessage eventMessage)
         {

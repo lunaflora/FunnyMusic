@@ -63,6 +63,41 @@
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 3
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/CoreBattle.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Prefabs/MusicPlay.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Circle_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Circle_2.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Line.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
         }
     ],
     "BundleList": [
@@ -81,7 +116,7 @@
             "UnityCRC": 0,
             "FileHash": "4ff950aaacb68b4f76d71289621c420c",
             "FileCRC": "00000000",
-            "FileSize": 38857,
+            "FileSize": 41723,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -91,7 +126,7 @@
             "UnityCRC": 0,
             "FileHash": "53ca29819e0c45cf5ef9c5eec209b4d8",
             "FileCRC": "00000000",
-            "FileSize": 467765,
+            "FileSize": 488919,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -102,6 +137,36 @@
             "FileHash": "87e6c7a5a94b0cafdd6f19f178d3b6c3",
             "FileCRC": "00000000",
             "FileSize": 2385,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_battle_prefabs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "3c4d564f9367207ef6f18ae29e79162c",
+            "FileCRC": "00000000",
+            "FileSize": 3277,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_musicplay_prefabs.bundle",
+            "UnityCRC": 0,
+            "FileHash": "c06e468e6c11524b00e4226eef608e69",
+            "FileCRC": "00000000",
+            "FileSize": 23072,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_musicplay_sprites.bundle",
+            "UnityCRC": 0,
+            "FileHash": "9e754543c6daa64497f3ef0f0a596433",
+            "FileCRC": "00000000",
+            "FileSize": 11912,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

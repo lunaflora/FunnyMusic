@@ -53,7 +53,10 @@ namespace FunnyMusic
         async UniTask InitGameModule()
         {
 
-            var BattlePrefab = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalCoreBattlePath);
+            var BattleCore = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalCoreBattlePath,
+                GlobalGameObjectComponent.Instance.Controller);
+            var MusicPlay = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalMusicPlayPath,
+                GlobalGameObjectComponent.Instance.Controller);
 
         }
         

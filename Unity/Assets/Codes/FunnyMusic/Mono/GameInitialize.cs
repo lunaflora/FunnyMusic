@@ -45,19 +45,26 @@ namespace FunnyMusic
             GameWorld.World.AddComponent<GlobalGameObjectComponent>();
             
             //3.游戏组件
-
             await InitGameModule();
+            
+            //4.进入测试关卡
+            EnterLevel();
 
         }
 
         async UniTask InitGameModule()
         {
 
-            var BattleCore = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalCoreBattlePath,
+            var BattleCore = await AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalCoreBattlePath,
                 GlobalGameObjectComponent.Instance.Controller);
-            var MusicPlay = AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalMusicPlayPath,
+            var MusicPlay = await AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalMusicPlayPath,
                 GlobalGameObjectComponent.Instance.Controller);
 
+        }
+
+        private void EnterLevel()
+        {
+            GameWorld.World.AddComponent<MusicPlayComponent, string>("level_001");
         }
         
         #region GameMainLoop

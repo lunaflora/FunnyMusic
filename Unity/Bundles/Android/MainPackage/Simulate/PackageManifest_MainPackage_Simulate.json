@@ -98,6 +98,20 @@
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 6
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Levels/level_001.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Levels/level_001.txt",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
         }
     ],
     "BundleList": [
@@ -116,7 +130,7 @@
             "UnityCRC": 0,
             "FileHash": "4ff950aaacb68b4f76d71289621c420c",
             "FileCRC": "00000000",
-            "FileSize": 41723,
+            "FileSize": 46913,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -156,7 +170,7 @@
             "UnityCRC": 0,
             "FileHash": "c06e468e6c11524b00e4226eef608e69",
             "FileCRC": "00000000",
-            "FileSize": 23072,
+            "FileSize": 27831,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -167,6 +181,16 @@
             "FileHash": "9e754543c6daa64497f3ef0f0a596433",
             "FileCRC": "00000000",
             "FileSize": 11912,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_levels.bundle",
+            "UnityCRC": 0,
+            "FileHash": "b7c24f256d134f83e7977e61bf6db8dc",
+            "FileCRC": "00000000",
+            "FileSize": 1765,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

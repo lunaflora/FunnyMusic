@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using NodeCanvas.Tasks.Actions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

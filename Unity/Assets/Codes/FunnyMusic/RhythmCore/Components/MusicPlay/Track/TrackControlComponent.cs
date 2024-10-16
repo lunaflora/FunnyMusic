@@ -1,4 +1,6 @@
-﻿using Framework;
+﻿using System.Collections.Generic;
+using Framework;
+using RhythmEditor;
 using UnityEngine;
 
 namespace FunnyMusic
@@ -22,6 +24,9 @@ namespace FunnyMusic
         /// 轨道鼓点元素的根节点
         /// </summary>
         public Transform DrumBeatsRoot;
+
+        public List<DrumBeatData> DrumBeatDatas = new List<DrumBeatData>();
+        public int BeatIndex = 0;
 
     }
     

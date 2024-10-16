@@ -11,6 +11,12 @@
         public static string InternalMusicPlayPath = $"{InternalBundleRoot}MusicPlay/Prefabs/MusicPlay.prefab"; 
 
         #endregion
+
+        #region CoreConfig
+
+        public static string InternalLevelConfig = $"{InternalBundleRoot}Levels/"; 
+
+        #endregion
        
     }
 }

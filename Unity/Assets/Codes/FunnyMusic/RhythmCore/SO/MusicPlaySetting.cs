@@ -37,6 +37,8 @@ namespace Codes.FunnyMusic.RhythmCore.SO
     [CreateAssetMenu(fileName = "MusicPlaySetting", menuName = "FunnyMusic/MusicPlaySetting", order = 0)]
     public class MusicPlaySetting : ScriptableObject
     {
+        [SerializeField]
+        public float BeatSpeed = 0.1f;
         [Tooltip("The accuracy table.")]
         [SerializeField] protected BeatAccuracy[] beatAccuracies;
         [Tooltip("The rank table.")]

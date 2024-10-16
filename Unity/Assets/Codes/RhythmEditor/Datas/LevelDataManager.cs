@@ -2,7 +2,6 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using CatJson;
 using Cysharp.Threading.Tasks;
 using FLib;
 using UniFramework.Event;
@@ -37,7 +36,7 @@ namespace RhythmEditor
             FilePropertyData openFile = new FilePropertyData();
             
             openFile.structSize = Marshal.SizeOf(openFile);
-            openFile.filter = "文件(*.level)\0*.level";
+            openFile.filter = "文件(*.txt)\0*.txt";
             openFile.file = new string(new char[256]);
             openFile.maxFile = openFile.file.Length;
             openFile.fileTitle = new string(new char[64]);
@@ -85,9 +84,9 @@ namespace RhythmEditor
             if (SaveFileAs(openFile))
             {
                 string filePath = openFile.file;
-                if (!filePath.EndsWith(".level"))
+                if (!filePath.EndsWith(".txt"))
                 {
-                    filePath += ".level";
+                    filePath += ".txt";
                 }
 
                 FileInfo file = new FileInfo(filePath);

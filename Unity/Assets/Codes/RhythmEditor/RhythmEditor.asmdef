@@ -1,0 +1,23 @@
+{
+    "name": "RhythmEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f22fac247a56d2d41b687bb0d900e54e",
+        "GUID:c55575a9f1747c240822f4b7e0400716",
+        "GUID:1ea6b676786131e4095182b742bb64ec",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:e54107a4be3dfad48a8ad8181f88e070",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:03d7376a8bec80f498ab282dcf33a718",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

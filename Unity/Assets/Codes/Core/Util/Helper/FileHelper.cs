@@ -103,5 +103,16 @@ namespace Core
 				}
 			}
 		}
+
+		public static string FilePathToUnity(string filePath)
+		{
+			int start = filePath.IndexOf("Asset");
+			int length = filePath.Length - start;
+
+			string unityPath = filePath.Substring(start, length);
+			unityPath = unityPath.Replace("\\", "/");
+
+			return unityPath;
+		}
     }
 }

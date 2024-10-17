@@ -1248,18 +1248,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrintTrace: 0
   SystemMode: 0
-  LoadingAudio: {fileID: 8300000, guid: 11f4b59207b89d64ba2f6219748da72c, type: 3}
+  LoadingAudio: {fileID: 8300000, guid: e2e303771e2795940af3706f86351cc0, type: 3}
   LoadingAudioPath: 
+  RuntimeAudioPath: 
   CurrentAudioTime: 0
   CurrentPlayTime: 0
   DrumBeatDatas: []
   DrumBeatSceneDatas: []
   DrumBeatUIDatas: []
+  LevelDifficulty: 1
+  Bpm: 120
   MissValue: 0.9
   BadValue: 0.6
   GreatValue: 0.4
   CoolValue: 0.2
   JudgeTimeCorrect: 0.25
+  MainVolume: 0
+  BackGroundVolume: 0
+  SongVolume: 0
 --- !u!4 &1667047466
 Transform:
   m_ObjectHideFlags: 0

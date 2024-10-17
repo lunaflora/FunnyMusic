@@ -10,10 +10,10 @@ namespace FunnyMusic
     /// 音符/鼓点轨道移动控制
     /// </summary>
     [ChildType(typeof(DrumBeatComponent))]
-    public class TrackControlComponent : Entity,IAwake<GameObject,int>
+    public class TrackControlComponent : Entity,IAwake<GameObject,TrackType>
     {
         public GameObject TrackControlGameObject;
-        public int TrackIndex;
+        public TrackType TrackType;
 
         /// <summary>
         /// 鼓点开始位置，判定位置
@@ -32,11 +32,11 @@ namespace FunnyMusic
     
     
     [ObjectSystem]
-    public class TrackControlComponentAwakeSystem : AwakeSystem<TrackControlComponent,GameObject,int>
+    public class TrackControlComponentAwakeSystem : AwakeSystem<TrackControlComponent,GameObject,TrackType>
     {
-        public override void Awake(TrackControlComponent self ,GameObject trackControlGameObject, int trackIndex)
+        public override void Awake(TrackControlComponent self ,GameObject trackControlGameObject, TrackType trackType)
         {
-            self.TrackIndex = trackIndex;
+            self.TrackType = trackType;
             self.Initialize(trackControlGameObject);
         }
     }
@@ -46,6 +46,8 @@ namespace FunnyMusic
         public static void Initialize(this TrackControlComponent self,GameObject trackControlGameObject)
         {
             self.TrackControlGameObject = trackControlGameObject;
+            self.DecisionAppearPoint = self.TrackControlGameObject.transform.Find("DecisionAppearPoint");
+            self.DecisionTipPoint = self.TrackControlGameObject.transform.Find("DecisionTipPoint");
 
         }
     }

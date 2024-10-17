@@ -101,7 +101,28 @@
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Levels/level_001.asset",
+            "AssetPath": "Assets/Bundles/Musics/Futurbass 158 bpm.ogg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Musics/Winter Fun 120 bpm.ogg",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Musics/こんとどぅふぇ素材No.0071-琥珀の想い.mp3",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Musics/こんとどぅふぇ素材No.0098-目が覚めた.mp3",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 7
@@ -111,7 +132,14 @@
             "AssetPath": "Assets/Bundles/Levels/level_001.txt",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 8
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Levels/level_001_play.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8
         }
     ],
     "BundleList": [
@@ -140,7 +168,7 @@
             "UnityCRC": 0,
             "FileHash": "53ca29819e0c45cf5ef9c5eec209b4d8",
             "FileCRC": "00000000",
-            "FileSize": 488919,
+            "FileSize": 489026,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -170,7 +198,7 @@
             "UnityCRC": 0,
             "FileHash": "c06e468e6c11524b00e4226eef608e69",
             "FileCRC": "00000000",
-            "FileSize": 27831,
+            "FileSize": 29997,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -186,11 +214,21 @@
             "DependIDs": []
         },
         {
+            "BundleName": "assets_bundles_musics.bundle",
+            "UnityCRC": 0,
+            "FileHash": "f63d77eb33e1fde933a8932b180e0e46",
+            "FileCRC": "00000000",
+            "FileSize": 7310002,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
             "BundleName": "assets_bundles_levels.bundle",
             "UnityCRC": 0,
             "FileHash": "b7c24f256d134f83e7977e61bf6db8dc",
             "FileCRC": "00000000",
-            "FileSize": 1765,
+            "FileSize": 1902,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

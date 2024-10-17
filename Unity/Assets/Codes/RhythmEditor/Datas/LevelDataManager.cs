@@ -71,7 +71,7 @@ namespace RhythmEditor
             FilePropertyData openFile = new FilePropertyData();
             
             openFile.structSize = Marshal.SizeOf(openFile);
-            openFile.filter = "文件(*.level)\0*.level";
+            openFile.filter = "文件(*.level)\0*.txt";
             openFile.file = new string(new char[256]);
             openFile.maxFile = openFile.file.Length;
             openFile.fileTitle = new string(new char[64]);
@@ -91,6 +91,7 @@ namespace RhythmEditor
 
                 FileInfo file = new FileInfo(filePath);
                 StreamWriter streamWriter = file.CreateText();
+                //EditorDataManager.Instance.RuntimeAudioPath = 
                 streamWriter.Write(JsonUtility.ToJson(EditorDataManager.Instance));
                 streamWriter.Dispose();
                 streamWriter.Close();
@@ -152,6 +153,9 @@ namespace RhythmEditor
             {
                 audioType = AudioType.MPEG;
             }
+            
+            //这里通过web加载MP3音频有些问题，加载出的音频长度比实际的大一点
+            //考虑统一音频格式为Ogg
 
             using (var uwr = UnityWebRequestMultimedia.GetAudioClip(filePath,audioType))
             {

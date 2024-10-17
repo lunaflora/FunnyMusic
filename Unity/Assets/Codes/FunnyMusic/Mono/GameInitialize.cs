@@ -57,8 +57,6 @@ namespace FunnyMusic
 
             var BattleCore = await AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalCoreBattlePath,
                 GlobalGameObjectComponent.Instance.Controller);
-            var MusicPlay = await AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalMusicPlayPath,
-                GlobalGameObjectComponent.Instance.Controller);
 
         }
 

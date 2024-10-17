@@ -14,6 +14,7 @@ namespace RhythmEditor
         public AudioClip LoadingAudio;
 
         public string LoadingAudioPath;
+        public string RuntimeAudioPath;
 
         /// <summary>
         /// 当前音频播放的时间

@@ -1,0 +1,9 @@
+{"Id":101,"AIConfigId":1,"Order":1,"AngularSpeed":2.3,"ChaseRange":145000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_Attack","NameArray":["a","b","c"],"NodeParams":[1,2,3]}
+{"Id":102,"AIConfigId":1,"Order":2,"AngularSpeed":1.8,"ChaseRange":185000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_XunLuo","NameArray":["a","b","c"],"NodeParams":[4,5,6]}
+{"Id":103,"AIConfigId":1,"Order":3,"AngularSpeed":2.3,"ChaseRange":145000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_Attack","NameArray":["a","b","c"],"NodeParams":[1,2,3]}
+{"Id":104,"AIConfigId":1,"Order":4,"AngularSpeed":1.8,"ChaseRange":185000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_XunLuo","NameArray":["a","b","c"],"NodeParams":[4,5,6]}
+{"Id":106,"AIConfigId":1,"Order":6,"AngularSpeed":2.3,"ChaseRange":145000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_Attack","NameArray":["a","b","c"],"NodeParams":[1,2,3]}
+{"Id":107,"AIConfigId":1,"Order":7,"AngularSpeed":1.8,"ChaseRange":185000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_XunLuo","NameArray":["a","b","c"],"NodeParams":[4,5,6]}
+{"Id":108,"AIConfigId":1,"Order":8,"AngularSpeed":2.3,"ChaseRange":145000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_Attack","NameArray":["a","b","c"],"NodeParams":[1,2,3]}
+{"Id":109,"AIConfigId":1,"Order":9,"AngularSpeed":1.8,"ChaseRange":185000,"SpeedSteps":[20000,22000,25000,30000],"Name":"AI_XunLuo","NameArray":["a","b","c"],"NodeParams":[4,5,6]}
+{"Id":202,"AIConfigId":2,"Order":1,"AngularSpeed":2.3,"ChaseRange":170000,"SpeedSteps":[30000,32000,35000,40000],"Name":"AI_XunLuo","NameArray":["a","b","c"],"NodeParams":[7,8,9]}

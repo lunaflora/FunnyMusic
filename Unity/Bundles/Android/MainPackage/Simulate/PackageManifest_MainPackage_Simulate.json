@@ -73,73 +73,136 @@
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/MusicPlay/Prefabs/MusicPlay.prefab",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/Enemy/Enemy001/Enemy001.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 5
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Circle_1.png",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/Enemy/Enemy001/enemy02Anim.controller",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/Player/Player001/MusicPlayer.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 6
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/Player/Player001/PlayerAnim.controller",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Prefabs/BeatGameObject/DrumBeatBlue.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Prefabs/BeatGameObject/DrumBeatRed.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Prefabs/MusicPlay.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Circle_1.png",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Circle_2.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 6
+            "BundleID": 9
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/MusicPlay/Sprites/Line.png",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 6
+            "BundleID": 9
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Musics/Futurbass 158 bpm.ogg",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 10
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Musics/Winter Fun 120 bpm.ogg",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 10
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Musics/こんとどぅふぇ素材No.0071-琥珀の想い.mp3",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 10
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Musics/こんとどぅふぇ素材No.0098-目が覚めた.mp3",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 7
+            "BundleID": 10
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Levels/level_001.txt",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 8
+            "BundleID": 11
         },
         {
             "Address": "",
             "AssetPath": "Assets/Bundles/Levels/level_001_play.asset",
             "AssetGUID": "",
             "AssetTags": [],
-            "BundleID": 8
+            "BundleID": 11
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Config/AIConfig.txt",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Config/BeatConfig.txt",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Config/ServerConfig.txt",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
         }
     ],
     "BundleList": [
@@ -158,7 +221,7 @@
             "UnityCRC": 0,
             "FileHash": "4ff950aaacb68b4f76d71289621c420c",
             "FileCRC": "00000000",
-            "FileSize": 46913,
+            "FileSize": 50716,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -194,11 +257,41 @@
             "DependIDs": []
         },
         {
+            "BundleName": "assets_bundles_battle_prefabs_enemy_enemy001.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7cef5a4c81c29ed38272b64503dff81f",
+            "FileCRC": "00000000",
+            "FileSize": 13906,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_battle_prefabs_player_player001.bundle",
+            "UnityCRC": 0,
+            "FileHash": "2ccef28c785e63a23e539d967e37e513",
+            "FileCRC": "00000000",
+            "FileSize": 33190,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_musicplay_prefabs_beatgameobject.bundle",
+            "UnityCRC": 0,
+            "FileHash": "c2a743e3d81c550648149f9277c7446d",
+            "FileCRC": "00000000",
+            "FileSize": 16970,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
             "BundleName": "assets_bundles_musicplay_prefabs.bundle",
             "UnityCRC": 0,
             "FileHash": "c06e468e6c11524b00e4226eef608e69",
             "FileCRC": "00000000",
-            "FileSize": 29997,
+            "FileSize": 31839,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -228,7 +321,17 @@
             "UnityCRC": 0,
             "FileHash": "b7c24f256d134f83e7977e61bf6db8dc",
             "FileCRC": "00000000",
-            "FileSize": 1902,
+            "FileSize": 1958,
+            "Encrypted": false,
+            "Tags": [],
+            "DependIDs": []
+        },
+        {
+            "BundleName": "assets_bundles_config.bundle",
+            "UnityCRC": 0,
+            "FileHash": "7e9e7e631a74905189ef92643930c9fc",
+            "FileCRC": "00000000",
+            "FileSize": 1922,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

@@ -1,0 +1,2 @@
+{"Id":101,"ServerGroup":1,"ServerId":1,"ConList":[23000,8000]}
+{"Id":402,"ServerGroup":4,"ServerId":2,"ConList":[16000,7000]}

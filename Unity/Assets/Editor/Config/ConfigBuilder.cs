@@ -129,6 +129,7 @@ public class ConfigBuilder
                 string fieldValue = GetCellString(row, j);
                 if (fieldValue == "")
                 {
+                    EditorUtility.ClearProgressBar();
                     throw new Exception($"sheet: {sheet.SheetName} 中有空白字段 {i},{j}");
                 }
 
@@ -352,7 +353,7 @@ public class ConfigBuilder
             head.Append("-----------------------------------------------------------------*/\n");
             head.Append("\n");
 
-            head.Append("using Framework;\nusing System.Collections.Generic;\n\nnamespace Savery\n{\n");
+            head.Append("using Framework;\nusing System.Collections.Generic;\n\nnamespace FunnyMusic\n{\n");
 
             return head.ToString();
         }
@@ -402,8 +403,8 @@ public class ConfigBuilder
 public static class EditorPath
 {
     
-    public static readonly string EditorConfigRoot = "Assets/GameRes/Export/Config";
-    public static readonly string EditorConfigCodeRoot = "Assets/Script/Savery/Config/ConfigGenerated";
+    public static readonly string EditorConfigRoot = "Assets/Bundles/Config";
+    public static readonly string EditorConfigCodeRoot = "Assets/Codes/FunnyMusic/Data/Config/ConfigGenerated";
     public static readonly string EditorConfigSourceRoot = "../ClientConfig";
     
     

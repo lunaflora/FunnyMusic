@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: level_001_play
   m_EditorClassIdentifier: 
   BeatSpeed: 0.1
+  LatencyCompensation: 3
+  SpawnTimeRange: {x: 9, y: 3}
   beatAccuracies: []
   scoreRanks: []

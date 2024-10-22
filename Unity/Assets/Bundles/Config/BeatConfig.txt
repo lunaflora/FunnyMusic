@@ -1,0 +1,2 @@
+{"Id":101,"TrackID":0,"BeatType":0,"Prefab":"DrumBeatBlue","Desc":"测试鼓点"}
+{"Id":102,"TrackID":1,"BeatType":0,"Prefab":"DrumBeatRed","Desc":"测试鼓点"}

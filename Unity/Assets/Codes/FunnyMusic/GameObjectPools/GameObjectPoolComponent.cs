@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace FunnyMusic
 {
-    public class GameObjectPoolComponent : MonoBehaviour
+    public class GameObjectPoolComponent : MonoBehaviourSingleton<GameObjectPoolComponent>
     {
 
         private GameObjectPoolSetting gameObjectPoolSetting;
@@ -14,7 +14,7 @@ namespace FunnyMusic
         private void Awake()
         {
             gameObjectPoolSetting =
-                AssetLoaderSystem.Instance.LoadAssetSync<GameObjectPoolSetting>(WordPathHelper.BUNDLE_POOL_SETTING);
+                Resources.Load<GameObjectPoolSetting>(WordPathHelper.BUNDLE_POOL_SETTING);
             
             
             GameObjectPoolManager.Root = transform;

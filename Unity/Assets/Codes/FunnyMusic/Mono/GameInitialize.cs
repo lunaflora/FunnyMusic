@@ -41,8 +41,11 @@ namespace FunnyMusic
             await AssetLoaderSystem.Instance.Initialize();
             
             //2.核心组件
+            GameWorld.World.AddComponent<ConfigGenerateComponent>();
+            await ConfigGenerateComponent.Instance.LoadAllAsync();
             GameWorld.World.AddComponent<InputComponent>();
             GameWorld.World.AddComponent<GlobalGameObjectComponent>();
+            GameWorld.World.AddComponent<TimerComponent>();
             
             //3.游戏组件
             await InitGameModule();

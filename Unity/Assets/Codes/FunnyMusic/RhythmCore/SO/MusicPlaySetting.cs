@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FLib;
 using UnityEngine;
 
-namespace Codes.FunnyMusic.RhythmCore.SO
+namespace FunnyMusic
 {
     /// <summary>
     /// 鼓点准确率配置
@@ -39,6 +39,15 @@ namespace Codes.FunnyMusic.RhythmCore.SO
     {
         [SerializeField]
         public float BeatSpeed = 0.1f;
+        
+        [Tooltip("音频播放的延迟时间")]
+        [SerializeField] public float LatencyCompensation;
+        
+        [Tooltip("The x means the time the beat should be spawned before it reaches the target. " +
+                 "The y means the time the beat should disappear after reaching target")]
+        [SerializeField] public Vector2 SpawnTimeRange = new Vector2(9,3);
+        
+        
         [Tooltip("The accuracy table.")]
         [SerializeField] protected BeatAccuracy[] beatAccuracies;
         [Tooltip("The rank table.")]

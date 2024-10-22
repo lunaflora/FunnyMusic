@@ -67,6 +67,11 @@ namespace FunnyMusic
             return _configItems.Values.ToArray();
         }
 
+        public List<IConfig> GetList()
+        {
+            return _configItems.Values.ToList();
+        }
+
        
         public override void BeginInit()
         {

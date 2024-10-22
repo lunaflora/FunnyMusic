@@ -102,7 +102,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-8999788035297534558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +154,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-8944675802380350518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +206,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-8809146867612831322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,8 +803,8 @@ MonoBehaviour:
     - {fileID: 4392867248356453819}
     - {fileID: 8957977359556094359}
     - {fileID: -4609397989445577242}
-  m_OnBeat: {fileID: 0}
-  m_OffBeat: {fileID: 0}
+  m_OnBeat: {fileID: 11400000, guid: 32a8b5e59771fce4a89dbdb9c521ac31, type: 2}
+  m_OffBeat: {fileID: 11400000, guid: caf5ede1335c92f448d57eaa6395c961, type: 2}
 --- !u!114 &-7843564412195805909
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1354,7 +1369,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-6135037283813388804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1611,7 +1631,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-5178290296870228419
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1700,7 +1725,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-4908682973733570388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1859,7 +1889,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-4347321339391237542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2102,7 +2137,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-3694781348080788650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2149,7 +2189,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-3565608973985265684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3201,7 +3246,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-2909014788634820249
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3430,7 +3480,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1877801066408332138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3477,7 +3532,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1761715767194852772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3496,7 +3556,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1716764574751150491
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3613,7 +3678,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1419029256462031446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3716,7 +3786,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1065803660363867953
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3735,7 +3810,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-1009335151962116392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3768,7 +3848,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-896395064432564163
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3885,7 +3970,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-487183487737034757
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3960,7 +4050,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-328531218270754608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3993,7 +4088,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-306398211421423243
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4082,7 +4182,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &-80417385013494001
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4228,7 +4333,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &62208304442805241
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5004,7 +5114,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &486793943312572959
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5065,7 +5180,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &697059112255760289
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6186,7 +6306,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &1302851235046700226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6371,7 +6496,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &1530569935776417800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6413,7 +6543,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &1582213558791530279
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6558,7 +6693,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &1927370106791054633
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7776,7 +7916,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &2364558367306350219
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8005,7 +8150,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &3348170832657290845
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8150,7 +8300,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &3877311120629295857
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8253,7 +8408,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &4194811153778865505
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8314,7 +8474,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &4318561949275407529
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8417,7 +8582,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &4417955760779121286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8534,7 +8704,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &4737974875836971973
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8595,7 +8770,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &4873571010356457882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8628,7 +8808,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &5085663411881210815
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8731,7 +8916,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &5349199026100149276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8778,7 +8968,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &5429681291357639536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8867,7 +9062,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &5743192552182826373
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9012,7 +9212,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &6170513012140677750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9073,7 +9278,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &6342774776007435366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9106,7 +9316,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &6463937028220532218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9223,7 +9438,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &6680933585095900468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9396,7 +9616,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &7448164602867752581
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9513,7 +9738,12 @@ MonoBehaviour:
     m_IntParameter: 15
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &7782543809007073910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9574,7 +9804,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &8011830519256965634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9635,7 +9870,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &8075316198401904225
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9923,7 +10163,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &8748975605946477642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10110,7 +10355,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &9161246229822277596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10143,7 +10393,12 @@ MonoBehaviour:
     m_IntParameter: 0
     m_StringParameter: 
     m_FloatParameter: 0
+    m_Vector2Parameter: {x: 0, y: 0}
+    m_Vector3Parameter: {x: 0, y: 0, z: 0}
+    m_Vector4Parameter: {x: 0, y: 0, z: 0, w: 0}
+    m_ColorParameter: {r: 0, g: 0, b: 0, a: 0}
     m_ObjectReferenceParameter: {fileID: 0}
+    m_ObjectReferenceArrayParameter: []
 --- !u!114 &9199509901910291530
 MonoBehaviour:
   m_ObjectHideFlags: 1

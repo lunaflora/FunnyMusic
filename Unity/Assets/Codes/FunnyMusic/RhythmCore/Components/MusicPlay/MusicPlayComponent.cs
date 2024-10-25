@@ -31,6 +31,8 @@ namespace FunnyMusic
         /// </summary>
         public float CurrentPlayTime = 0;
 
+        public MusicPlayState MusicPlayState;
+
         public MusicPlaySetting MusicPlaySetting = null;
 
     }
@@ -73,6 +75,7 @@ namespace FunnyMusic
 
         public static async UniTask Initialize(this MusicPlayComponent self,string levelName)
         {
+            self.MusicPlayState = MusicPlayState.Prepare;
             //1.加载MusicPlay预制
             self.MusicPlay = await AssetLoaderSystem.Instance.InstantiateSync(ResourcesPath.InternalMusicPlayPath,
                 GlobalGameObjectComponent.Instance.Controller);
@@ -84,10 +87,10 @@ namespace FunnyMusic
             
             //3.加载制谱表
             await self.LoadMusicLevel(levelName);
+
             
-          
             
-            FDebug.Print($"MusicPlaySetting {self.MusicPlaySetting.BeatSpeed}");
+            FDebug.Print($"MusicPlaySetting {self.MusicPlaySetting.BeatMoveTime}");
 
 
         }
@@ -136,6 +139,7 @@ namespace FunnyMusic
             await TimerComponent.Instance.WaitAsync((long)self.MusicPlaySetting.LatencyCompensation * 1000);
             self.PlayMusicSource.Play();
             self.CurrentAudioTime = self.PlayMusicSource.time;
+            self.MusicPlayState = MusicPlayState.Play;
         }
 
 
@@ -147,6 +151,13 @@ namespace FunnyMusic
         public static void Update(this MusicPlayComponent self)
         {
             self.CurrentPlayTime += Time.deltaTime;
+            switch (self.MusicPlayState)
+            {
+                case MusicPlayState.Play:
+                    self.CurrentAudioTime += Time.deltaTime;
+                    break;
+                
+            }
         }
 
         #endregion
@@ -155,6 +166,7 @@ namespace FunnyMusic
         public static void Destroy(this MusicPlayComponent self)
         {
             self.CurrentPlayTime = 0;
+            self.CurrentAudioTime = 0;
             GameObject.Destroy(self.MusicPlay);
         }
     }

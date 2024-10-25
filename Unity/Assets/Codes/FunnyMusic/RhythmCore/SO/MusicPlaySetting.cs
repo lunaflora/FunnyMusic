@@ -38,7 +38,10 @@ namespace FunnyMusic
     public class MusicPlaySetting : ScriptableObject
     {
         [SerializeField]
-        public float BeatSpeed = 0.1f;
+        public float BeatMoveTime = 1.5f;
+        
+        [SerializeField]
+        public float BeatMoveSpeed = 0.5f;
         
         [Tooltip("音频播放的延迟时间")]
         [SerializeField] public float LatencyCompensation;

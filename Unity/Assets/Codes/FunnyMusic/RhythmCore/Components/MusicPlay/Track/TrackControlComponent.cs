@@ -107,6 +107,13 @@ namespace FunnyMusic
         {
             
         }
+
+        public static Vector3 GetBeatDirection(this TrackControlComponent self)
+        {
+            return Vector3.Normalize(self.DecisionTipPoint.transform.position -
+                                     self.DecisionAppearPoint.transform.position);
+
+        }
     }
 
 }

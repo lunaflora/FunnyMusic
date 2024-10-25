@@ -16,4 +16,11 @@ namespace FunnyMusic
         SwipeDown,//向下滑动
         Hold //长按
     }
+
+    public enum MusicPlayState
+    {
+        Prepare,
+        Play,
+        End
+    }
 }

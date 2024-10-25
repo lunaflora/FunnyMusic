@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced24f5a1e594307ac1c1f58d2431ae8, type: 3}
   m_Name: level_001_play
   m_EditorClassIdentifier: 
-  BeatSpeed: 0.1
+  BeatMoveTime: 0.75
   LatencyCompensation: 3
   SpawnTimeRange: {x: 9, y: 3}
   beatAccuracies: []

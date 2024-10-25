@@ -31,6 +31,9 @@ namespace FunnyMusic
         /// 先用插值移动的方式测试效果
         /// </summary>
         public Transform BeatStart,BeatEnd;
+
+        public float BeatMoveSpeed;
+        public float BeatMoveDirection;
     }
     
     
@@ -76,11 +79,33 @@ namespace FunnyMusic
             }
 
             self.DrumBeatObject = await RhythmCoreUtil.SpawnDrumBeat(self.BeatConfig.Prefab, self.DrumBeatData.ID);
+            self.DrumBeatObject.transform.position =
+                self.GetParent<TrackControlComponent>().DecisionAppearPoint.transform.position;
+
+            self.BeatStart = self.GetParent<TrackControlComponent>().DecisionAppearPoint;
+            self.BeatEnd = self.GetParent<TrackControlComponent>().DecisionTipPoint;
 
         }
 
         public static void UpdateDrumBeat(this DrumBeatComponent self)
         {
+            if (self.DrumBeatObject == null)
+            {
+                return;
+            }
+            float beatTime = self.DrumBeatData.BeatTime;
+            MusicPlayComponent musicPlayComponent =
+                self.GetParent<TrackControlComponent>().GetParent<MusicPlayComponent>();
+            float currentTime = musicPlayComponent.CurrentPlayTime;
+            self.BeatMoveSpeed = musicPlayComponent.MusicPlaySetting.BeatMoveSpeed;
+            self.HybridUpdate(currentTime - beatTime);
+
+        }
+
+        private static void HybridUpdate(this DrumBeatComponent self,double timeFromStart)
+        {
+            float perfectTime = 0;
+            var deltaT = (float)(timeFromStart - perfectTime);
             
         }
         

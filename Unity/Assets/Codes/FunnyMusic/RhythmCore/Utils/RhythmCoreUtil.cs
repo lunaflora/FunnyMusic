@@ -41,12 +41,17 @@ namespace FunnyMusic
             UniTaskCompletionSource<GameObject> tcs = new UniTaskCompletionSource<GameObject>();
 
             GameObject drumBeat =
-                await GameObjectPoolManager.GetAsync(string.Format(ResourcesPath.InternalDrumBeatPath, prefab));
+                await GameObjectPoolManager.GetAsync(prefab);
 
             drumBeat.GetComponent<DrumBeatBehaviour>().BeatID = id;
             tcs.TrySetResult(drumBeat);
 
             return await tcs.Task;
+        }
+
+        public static void DespawnDrumBeat(string prefab,GameObject beat)
+        {
+            GameObjectPoolManager.Release(prefab,beat);
         }
         
 

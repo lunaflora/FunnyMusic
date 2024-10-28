@@ -26,6 +26,7 @@ namespace FunnyMusic
 
         public BeatConfig BeatConfig;
         public GameObject DrumBeatObject;
+        public string AssetName;
         
         /// <summary>
         /// 先用插值移动的方式测试效果
@@ -33,7 +34,9 @@ namespace FunnyMusic
         public Transform BeatStart,BeatEnd;
 
         public float BeatMoveSpeed;
-        public float BeatMoveDirection;
+        public Vector3 BeatMoveDirection;
+        public float BeatPostActiveTime;
+        public float BeatDespawnOffset;
     }
     
     
@@ -53,7 +56,7 @@ namespace FunnyMusic
     {
         public override void Destroy(DrumBeatComponent self)
         {
-            
+            self.Destroy();
         }
     }
     
@@ -78,12 +81,15 @@ namespace FunnyMusic
                 FDebug.Error($"鼓点配置为空 trackID : {trackID}");
             }
 
-            self.DrumBeatObject = await RhythmCoreUtil.SpawnDrumBeat(self.BeatConfig.Prefab, self.DrumBeatData.ID);
+            self.AssetName = string.Format(ResourcesPath.InternalDrumBeatPath, self.BeatConfig.Prefab);
+            self.DrumBeatObject = await RhythmCoreUtil.SpawnDrumBeat(self.AssetName, self.DrumBeatData.ID);
             self.DrumBeatObject.transform.position =
                 self.GetParent<TrackControlComponent>().DecisionAppearPoint.transform.position;
 
             self.BeatStart = self.GetParent<TrackControlComponent>().DecisionAppearPoint;
             self.BeatEnd = self.GetParent<TrackControlComponent>().DecisionTipPoint;
+            self.BeatMoveDirection = self.GetParent<TrackControlComponent>().GetBeatDirection();
+            self.ActiveState = ActiveState.Active;
 
         }
 
@@ -96,17 +102,57 @@ namespace FunnyMusic
             float beatTime = self.DrumBeatData.BeatTime;
             MusicPlayComponent musicPlayComponent =
                 self.GetParent<TrackControlComponent>().GetParent<MusicPlayComponent>();
-            float currentTime = musicPlayComponent.CurrentPlayTime;
+            float currentMusicTime = musicPlayComponent.CurrentAudioTime;
             self.BeatMoveSpeed = musicPlayComponent.MusicPlaySetting.BeatMoveSpeed;
-            self.HybridUpdate(currentTime - beatTime);
+            self.BeatDespawnOffset = musicPlayComponent.MusicPlaySetting.SpawnTimeRange.y;
+            
+            self.HybridUpdate(currentMusicTime - beatTime,currentMusicTime,musicPlayComponent.CurrentPlayTime);
+            self.UpdateState(currentMusicTime);
+            
 
         }
 
-        private static void HybridUpdate(this DrumBeatComponent self,double timeFromStart)
+        private static void UpdateState(this DrumBeatComponent self,float currentTime)
+        {
+            switch (self.ActiveState)
+            {
+                case ActiveState.PostActive:
+                    //达到了终点，开始计算回收时间
+                    if (currentTime - self.BeatPostActiveTime > self.BeatDespawnOffset)
+                    {
+                        self.Dispose();
+                    }
+                    
+                    break;
+                
+            }
+            
+        }
+
+        private static void HybridUpdate(this DrumBeatComponent self,double timeFromStart,float currentMusicTime,float currentPlayTime)
         {
             float perfectTime = 0;
             var deltaT = (float)(timeFromStart - perfectTime);
             
+            var direction = self.BeatMoveDirection;
+            var distance = deltaT * self.BeatMoveSpeed;
+            var targetPosition =self.BeatEnd.transform.position;
+            
+            var newPosition = targetPosition + (direction * distance);
+            self.DrumBeatObject.transform.position = newPosition;
+
+            //到达了目标
+            if (deltaT > 0 && self.ActiveState == ActiveState.Active)
+            {
+                self.ActiveState = ActiveState.PostActive;
+                self.BeatPostActiveTime = currentMusicTime;
+                FDebug.Print($"完美触发音频时间 {self.BeatPostActiveTime} 关卡时间 {currentPlayTime}");
+            }
+        }
+
+        public static void Destroy(this DrumBeatComponent self)
+        {
+            RhythmCoreUtil.DespawnDrumBeat(self.AssetName,self.DrumBeatObject);
         }
         
     }

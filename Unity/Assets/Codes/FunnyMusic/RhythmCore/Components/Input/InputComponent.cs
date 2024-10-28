@@ -27,6 +27,13 @@ namespace FunnyMusic
 
         #endregion
 
+
+        #region EditorInput
+
+        
+
+        #endregion
+
     }
     
     [ObjectSystem]

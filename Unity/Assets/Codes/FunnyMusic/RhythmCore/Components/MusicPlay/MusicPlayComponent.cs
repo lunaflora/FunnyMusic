@@ -35,6 +35,8 @@ namespace FunnyMusic
 
         public MusicPlaySetting MusicPlaySetting = null;
 
+        public WaveformData WaveformData = null;
+
     }
     
     [ObjectSystem]
@@ -94,6 +96,13 @@ namespace FunnyMusic
 
 
         }
+        
+        public static void Destroy(this MusicPlayComponent self)
+        {
+            self.CurrentPlayTime = 0;
+            self.CurrentAudioTime = 0;
+            GameObject.Destroy(self.MusicPlay);
+        }
 
         /// <summary>
         /// 加载音乐关卡谱面，并解析为运行时数据
@@ -111,8 +120,9 @@ namespace FunnyMusic
             AudioClip audioClip =  await AssetLoaderSystem.Instance.LoadAssetAsync<AudioClip>(audioPath);
             self.PlayMusicSource.clip = audioClip;
             
-           
+            
             self.InitTrackComponent();
+            self.InitWaveformData();
 
             await self.PlayMusic();
 
@@ -161,14 +171,46 @@ namespace FunnyMusic
         }
 
         #endregion
-        
-        
-        public static void Destroy(this MusicPlayComponent self)
+
+
+        #region UI
+
+        private static void InitWaveformData(this MusicPlayComponent self)
         {
-            self.CurrentPlayTime = 0;
-            self.CurrentAudioTime = 0;
-            GameObject.Destroy(self.MusicPlay);
+            self.WaveformData = new WaveformData();
+            AudioClip audioClip = self.PlayMusicSource.clip;
+            self.WaveformData.waveformWidth  = Mathf.CeilToInt(audioClip.length * UIConstValue.UIWidthScale);
+            //每组数据容量
+            int groupDataCounts = audioClip.frequency / (int)UIConstValue.UIWidthScale;
+            //歌曲采样数据
+            float[] clipSampleData = new float[audioClip.samples * audioClip.channels];
+            audioClip.GetData(clipSampleData, 0);
+            //波形数值
+            self.WaveformData.waveformDatas = new float[clipSampleData.Length / groupDataCounts];
+            float maxWaveform = 0;
+            for (int i = 0; i <  self.WaveformData.waveformDatas.Length; i++)
+            {
+                self.WaveformData.waveformDatas[i] = 0;
+                for (int j = 0; j < groupDataCounts; j++)
+                {
+                    self.WaveformData.waveformDatas[i] += Mathf.Abs(clipSampleData[i * groupDataCounts + j]);
+                }
+
+                if (maxWaveform <  self.WaveformData.waveformDatas[i])
+                {
+                    maxWaveform =  self.WaveformData.waveformDatas[i];
+                }
+                
+            }
+
+            self.WaveformData.maxWaveform = maxWaveform;
+
         }
+        
+
+        #endregion
+        
+     
     }
 
 }

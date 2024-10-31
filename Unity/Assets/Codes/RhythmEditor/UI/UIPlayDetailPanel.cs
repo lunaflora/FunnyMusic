@@ -68,6 +68,14 @@ namespace RhythmEditor
             }
         }
 
+        /// <summary>
+        /// 添加Chroma特征到鼓点列表
+        /// </summary>
+        public void ApplyChroma()
+        {
+            
+        }
+
         private void OnRhythmAnalyzeComplete(RhythmData rhythmData)
         {
             RhythmData = rhythmData;
@@ -155,6 +163,28 @@ namespace RhythmEditor
             }
             
             EditorEventDefine.EventSetCurrentTime.SendEventMessage(DrumBeatData.BeatTime);
+        }
+
+
+        public void DeleteAllDrumBeat()
+        {
+            
+            DrumBeatData = null;
+            DrumBeatUIData = null;
+            DrumBeatSceneData = null;
+
+            for (int i = 0; i < EditorDataManager.Instance.DrumBeatDatas.Count; i++)
+            {
+                var drumBeatData = EditorDataManager.Instance.DrumBeatDatas[i];
+                var drumBeatUIData = EditorDataManager.Instance.DrumBeatUIDatas[i];
+                var drumBeatSceneData = EditorDataManager.Instance.DrumBeatSceneDatas[i];
+                EditorEventDefine.EventDeleteDrumBeatData.SendEventMessage(drumBeatData,drumBeatSceneData,drumBeatUIData);
+            }
+            EditorDataManager.Instance.DrumBeatDatas.Clear();
+            EditorDataManager.Instance.DrumBeatUIDatas.Clear();
+            EditorDataManager.Instance.DrumBeatSceneDatas.Clear();
+            
+            ShowNoData();
         }
 
         public void DeleteDrumBeat()

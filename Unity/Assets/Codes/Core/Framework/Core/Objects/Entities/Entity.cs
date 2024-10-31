@@ -908,6 +908,22 @@ namespace Framework
             return child as K;
 
         }
+        
+        public K GetChildAllowNone<K>(long id) where K : Entity
+        {
+            if (this.children == null)
+            {
+                return null;
+            }
+
+            if (!this.children.TryGetValue(id, out Entity child))
+            {
+                return null;
+            }
+
+            return child as K;
+
+        }
 
         public Entity GetComponent(Type type)
         {

@@ -12,12 +12,12 @@ namespace FunnyMusic
         /// </summary>
         public class EventTriggerTrack : IEventMessage
         {
-            public int TrackID;
-            public static void SendEventMessage(int trackID)
+            public InputEventData InputEventData;
+            public static void SendEventMessage(InputEventData inputEventData)
             {
                 var msg = new EventDefine.EventTriggerTrack()
                 {
-                    
+                    InputEventData = inputEventData
                 };
               
                 UniEvent.SendMessage(msg);

@@ -56,5 +56,17 @@ namespace FunnyMusic
         
 
         #endregion
+
+
+        #region Convert
+
+        public static float ConvertIntToFloat(int intValue)
+        {
+            float floatValue = intValue / (10000.0f);
+            return floatValue;
+        }
+        
+
+        #endregion
     }
 }

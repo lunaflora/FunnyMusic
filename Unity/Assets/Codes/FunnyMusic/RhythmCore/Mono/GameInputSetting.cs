@@ -1,4 +1,5 @@
-﻿using UniFramework.Event;
+﻿using FLib;
+using UniFramework.Event;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,7 +20,9 @@ namespace FunnyMusic
             switch (context.phase)
             {
                 case InputActionPhase.Performed:
-                    //EditorEventDefine.EventDemoPoint1.SendEventMessage();
+                    FDebug.Print("触发第一轨道");
+                    InputEventData inputEventData = new InputEventData((int)TrackType.LeftTrack,0);
+                    EventDefine.EventTriggerTrack.SendEventMessage(inputEventData);
                     break;
                 
             }
@@ -34,7 +37,9 @@ namespace FunnyMusic
             switch (context.phase)
             {
                 case InputActionPhase.Performed:
-                    //EditorEventDefine.EventDemoPoint2.SendEventMessage();
+                    FDebug.Print("触发第二轨道");
+                    InputEventData inputEventData = new InputEventData((int)TrackType.LeftTrack,1);
+                    EventDefine.EventTriggerTrack.SendEventMessage(inputEventData);
                     break;
                 
             }

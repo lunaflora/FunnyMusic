@@ -17,6 +17,7 @@ namespace FunnyMusic
 	{
 		public int TrackID;
 		public int BeatType;
+		public List<int> TriggerRange;
 		public string Prefab;
 		public string Desc;
 	}

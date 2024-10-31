@@ -393,7 +393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 499205162}
         m_TargetAssemblyTypeName: FunnyMusic.GameInputSetting, FunnyMusic
-        m_MethodName: OnTriggerTack1
+        m_MethodName: OnTriggerTack0
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -409,7 +409,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 499205162}
         m_TargetAssemblyTypeName: FunnyMusic.GameInputSetting, FunnyMusic
-        m_MethodName: OnTriggerTack2
+        m_MethodName: OnTriggerTack1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

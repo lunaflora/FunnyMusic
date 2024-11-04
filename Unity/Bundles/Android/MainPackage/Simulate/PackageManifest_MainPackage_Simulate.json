@@ -203,6 +203,13 @@
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 12
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Bundles/Config/UnitConfig.txt",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12
         }
     ],
     "BundleList": [

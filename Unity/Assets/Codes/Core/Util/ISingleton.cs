@@ -6,6 +6,8 @@ namespace Core
     {
         void Register();
         void Initialize();
+        
+        void Destroy();
     }
 
     public abstract class Singleton<T> : ISingleton where T : Singleton<T>, new()

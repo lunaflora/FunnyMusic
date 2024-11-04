@@ -20,12 +20,9 @@ namespace FunnyMusic
 
         public static BeatConfig GetBeatConfigByTypeTrack(int beatType,int trackID)
         {
-            BeatConfigCategory beatConfigCategory = ConfigGenerateComponent.Instance.AllConfig[typeof(BeatConfigCategory)] as BeatConfigCategory;
-            List<BeatConfig> beatConfigs =  beatConfigCategory.GetList().OfType<BeatConfig>().ToList();
-
 
             BeatConfig beatConfig =
-                beatConfigs.Find((config) => config.BeatType == beatType && config.TrackID == trackID);
+                ConfigManager.Instance.BeatConfigs.Find((config) => config.BeatType == beatType && config.TrackID == trackID);
 
             return beatConfig;
 

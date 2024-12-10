@@ -1,0 +1,1 @@
+{"Id":1001,"Type":1,"Name":"玩家1","Position":[0,0,0],"Yaw":90,"Prefab":"Player001"}

@@ -19,6 +19,12 @@
         public static string InternalLevelConfig = $"{InternalBundleRoot}Levels/"; 
 
         #endregion
-       
+
+
+        #region Unit
+
+        public static string InternalUnitGameObjectPath = InternalBundleRoot + "Battle/Prefabs/Player/{0}/{1}.prefab";
+
+        #endregion
     }
 }

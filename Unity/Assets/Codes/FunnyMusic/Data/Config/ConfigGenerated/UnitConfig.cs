@@ -17,9 +17,8 @@ namespace FunnyMusic
 	{
 		public int Type;
 		public string Name;
-		public string Desc;
-		public int Position;
-		public int Height;
-		public int Weight;
+		public List<int> Position;
+		public int Yaw;
+		public string Prefab;
 	}
 }

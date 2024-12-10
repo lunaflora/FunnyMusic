@@ -87,7 +87,7 @@
         },
         {
             "Address": "",
-            "AssetPath": "Assets/Bundles/Battle/Prefabs/Player/Player001/MusicPlayer.prefab",
+            "AssetPath": "Assets/Bundles/Battle/Prefabs/Player/Player001/Player001.prefab",
             "AssetGUID": "",
             "AssetTags": [],
             "BundleID": 6
@@ -228,7 +228,7 @@
             "UnityCRC": 0,
             "FileHash": "4ff950aaacb68b4f76d71289621c420c",
             "FileCRC": "00000000",
-            "FileSize": 56574,
+            "FileSize": 48501,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -278,7 +278,7 @@
             "UnityCRC": 0,
             "FileHash": "2ccef28c785e63a23e539d967e37e513",
             "FileCRC": "00000000",
-            "FileSize": 33190,
+            "FileSize": 36598,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []
@@ -338,7 +338,7 @@
             "UnityCRC": 0,
             "FileHash": "7e9e7e631a74905189ef92643930c9fc",
             "FileCRC": "00000000",
-            "FileSize": 1976,
+            "FileSize": 2064,
             "Encrypted": false,
             "Tags": [],
             "DependIDs": []

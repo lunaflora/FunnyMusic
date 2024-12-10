@@ -20,6 +20,7 @@ namespace FunnyMusic
         /// 核心游戏逻辑Root
         /// </summary>
         public Transform Controller { get; set; }
+        public Transform UnitRoot { get; set; }
         
     }
     
@@ -56,6 +57,11 @@ namespace FunnyMusic
             if (self.OtherRoot == null)
             {
                 self.OtherRoot = GameObjectUtil.CreateTransform("OtherRoot", self.UIRoot);
+            }
+            
+            if (self.UnitRoot == null)
+            {
+                self.UnitRoot = GameObjectUtil.CreateTransform("UnitRoot", self.Controller);
             }
 
         }

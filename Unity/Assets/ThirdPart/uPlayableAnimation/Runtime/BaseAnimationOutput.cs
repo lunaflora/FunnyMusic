@@ -65,6 +65,16 @@ namespace UPlayable.AnimationMixer
             }
         }
 
+        public void SetFadeInTime(float fadeIn)
+        {
+            TransitionSetting.FadeInTime = fadeIn;
+            ParseSettingToModel();
+            if (m_Id != -1 && IsStatic)
+            {
+                m_manager.UpdateInputModel(m_Id, m_model, LayerIndex);
+            }
+        }
+
         public void SetFixedTimeOffset(float fixedTimeOffset)
         {
             TransitionSetting.FixedTimeOffset = fixedTimeOffset;

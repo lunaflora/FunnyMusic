@@ -55,6 +55,7 @@ namespace FunnyMusic
             
             //4.进入测试关卡
             EnterLevel();
+            LoadPlayer();
 
         }
 
@@ -70,6 +71,17 @@ namespace FunnyMusic
         {
             GameWorld.World.AddComponent<MusicPlayComponent, string>("level_001");
         }
+
+
+        private void LoadPlayer()
+        {
+            UnitFactory.CreatePlayer(new UnitInfo()
+            {
+                ConfigId = 1001,
+                UnitId = IdGenerater.Instance.GenerateUnitId(0)
+            }).Forget();
+        }
+        
         
         #region GameMainLoop
 
